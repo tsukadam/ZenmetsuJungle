@@ -29,24 +29,7 @@ namespace Tests
             Assert.AreEqual(stateTop, 0);
             Assert.AreEqual(stateBottom, 0);
         }
-        [Test]
-        public void CheckMoveLeft()
-        {
-            GameObject Player1 = Controller.GetComponent<ControllerKey>().Player;
-            Vector3 PositionPlayer1 = Player1.GetComponent<RectTransform>().localPosition;
-            var X1 = PositionPlayer1.x;
-            var Y1 = PositionPlayer1.y;
-
-            Controller.GetComponent<ControllerKey>().MovePlayerLeft();
-
-            GameObject Player2 = Controller.GetComponent<ControllerKey>().Player;
-            Vector3 positionPlayer2 = Player2.GetComponent<RectTransform>().localPosition;
-            var X2 = positionPlayer2.x;
-            var Y2 = positionPlayer2.y;
-
-            Assert.IsTrue(X2 < X1);
-
-        }
+        
 
     }
 }

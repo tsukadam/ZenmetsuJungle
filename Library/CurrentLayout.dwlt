@@ -38,17 +38,16 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 638
+    x: 1513
     y: 0
-    width: 1282
+    width: 407
     height: 1067
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 10}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
-  - {fileID: 10}
-  m_Selected: 1
+  m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -140,10 +139,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1067
-  m_MinSize: {x: 738, y: 274}
-  m_MaxSize: {x: 22008, y: 10024}
+  m_MinSize: {x: 917, y: 274}
+  m_MaxSize: {x: 22012, y: 10024}
   vertical: 0
-  controlID: 46
+  controlID: 53
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,10 +160,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 200
+    width: 204
     height: 1067
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -185,9 +184,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 200
+    x: 204
     y: 0
-    width: 204
+    width: 1012
     height: 1067
   m_MinSize: {x: 204, y: 224}
   m_MaxSize: {x: 4004, y: 4024}
@@ -213,9 +212,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 404
+    x: 1216
     y: 0
-    width: 234
+    width: 297
     height: 1067
   m_MinSize: {x: 234, y: 274}
   m_MaxSize: {x: 10004, y: 10024}
@@ -223,6 +222,7 @@ MonoBehaviour:
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
+  - {fileID: 10}
   - {fileID: 11}
   - {fileID: 18}
   m_Selected: 0
@@ -247,9 +247,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 638
+    x: 1216
     y: 73
-    width: 1280
+    width: 293
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -259,9 +259,9 @@ MonoBehaviour:
     - id: '[ZenmetsuJungle][suite]'
       name: ZenmetsuJungle
       fullName: ZenmetsuJungle
-      resultStatus: 2
-      duration: 0.2153899
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.1428488
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -273,9 +273,9 @@ MonoBehaviour:
     - id: '[C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/PlayMode.dll][suite]'
       name: PlayMode.dll
       fullName: C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/PlayMode.dll
-      resultStatus: 2
-      duration: 0.1781485
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.1146616
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -287,9 +287,9 @@ MonoBehaviour:
     - id: '[Tests][suite]'
       name: Tests
       fullName: Tests
-      resultStatus: 2
-      duration: 0.1620012
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.0959641
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
       name: NewTestScript
       fullName: Tests.NewTestScript
       resultStatus: 1
-      duration: 0.0751808
+      duration: 0.0762168
       messages: 
       output: 
       stacktrace: 
@@ -316,7 +316,7 @@ MonoBehaviour:
       name: NewTestScriptSimplePasses
       fullName: Tests.NewTestScript.NewTestScriptSimplePasses
       resultStatus: 1
-      duration: 0.0063143
+      duration: 0.0066578
       messages: 
       output: 
       stacktrace: 
@@ -331,7 +331,7 @@ MonoBehaviour:
       name: NewTestScriptWithEnumeratorPasses
       fullName: Tests.NewTestScript.NewTestScriptWithEnumeratorPasses
       resultStatus: 1
-      duration: 0.040747
+      duration: 0.0412743
       messages: 
       output: 
       stacktrace: 
@@ -342,52 +342,20 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[PlayMode][Tests.NewTestScript][suite]'
-    - id: '[PlayMode][Tests.PTKey][suite]'
-      name: PTKey
-      fullName: Tests.PTKey
-      resultStatus: 2
-      duration: 0.0643548
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentID: '[Tests][suite]'
-    - id: '[PlayMode][Tests.PTKey.CheckMoveLeft]'
-      name: CheckMoveLeft
-      fullName: Tests.PTKey.CheckMoveLeft
-      resultStatus: 2
-      duration: 0.049738
-      messages: 'System.NullReferenceException : Object reference not set to an instance
-        of an object'
-      output: 
-      stacktrace: "  at Tests.PTKey+<CheckMoveLeft>d__2.MoveNext () [0x00023] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\PlayMode\\PTKey.cs:24
-        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>c__Iterator0.MoveNext
-        () [0x00031] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:29 "
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[PlayMode][Tests.PTKey][suite]'
-    m_ResultText: "CheckMoveLeft (0.050s)\n---\nSystem.NullReferenceException : Object
-      reference not set to an instance of an object\n---\nat Tests.PTKey+<CheckMoveLeft>d__2.MoveNext
-      () [0x00023] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\PlayMode\\PTKey.cs:24
+    m_ResultText: "TestTrigger (0.051s)\n---\nSystem.NullReferenceException : Object
+      reference not set to an instance of an object\n---\nat Tests.PTCharaMove+<TestTrigger>d__2.MoveNext
+      () [0x00020] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\PlayMode\\PTCharaMove.cs:22
       \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>c__Iterator0.MoveNext
       () [0x00031] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:29"
-    m_ResultStacktrace: "  at Tests.PTKey+<CheckMoveLeft>d__2.MoveNext () [0x00023]
-      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\PlayMode\\PTKey.cs:24 \r\n
-      \ at UnityEngine.TestTools.TestEnumerator+<Execute>c__Iterator0.MoveNext ()
-      [0x00031] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:29 "
+    m_ResultStacktrace: "  at Tests.PTCharaMove+<TestTrigger>d__2.MoveNext () [0x00020]
+      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\PlayMode\\PTCharaMove.cs:22
+      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>c__Iterator0.MoveNext
+      () [0x00031] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:29 "
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: bda9cb1d
-      m_LastClickedID: 499886525
-      m_ExpandedIDs: e89758a78bbcd9a72df03abc0ccdc0ca3beef202ffffff7f
+      m_SelectedIDs: 2c6b1f4f
+      m_LastClickedID: 1327459116
+      m_ExpandedIDs: e89758a78bbcd9a72df03abc0ccdc0ca3beef202c443232fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -420,7 +388,7 @@ MonoBehaviour:
       name: ZenmetsuJungle
       fullName: ZenmetsuJungle
       resultStatus: 1
-      duration: 0.1206364
+      duration: 0.2842274
       messages: 
       output: 
       stacktrace: 
@@ -434,7 +402,7 @@ MonoBehaviour:
       name: EditMode.dll
       fullName: C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/EditMode.dll
       resultStatus: 1
-      duration: 0.0933192
+      duration: 0.2235707
       messages: 
       output: 
       stacktrace: 
@@ -448,7 +416,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 0.0832535
+      duration: 0.1888147
       messages: 
       output: 
       stacktrace: 
@@ -458,11 +426,129 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: '[EditMode][Tests.ETAttack][suite]'
+      name: ETAttack
+      fullName: Tests.ETAttack
+      resultStatus: 1
+      duration: 0.0494381
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[Tests][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
+      name: TestMakeWeapon
+      fullName: Tests.ETAttack.TestMakeWeapon
+      resultStatus: 1
+      duration: 0.0311839
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[EditMode][Tests.ETAttack][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("GunBullet","RodSword")]'
+      name: TestMakeWeapon("GunBullet","RodSword")
+      fullName: Tests.ETAttack.TestMakeWeapon("GunBullet","RodSword")
+      resultStatus: 1
+      duration: 0.0079327
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("None","None")]'
+      name: TestMakeWeapon("None","None")
+      fullName: Tests.ETAttack.TestMakeWeapon("None","None")
+      resultStatus: 1
+      duration: 0.0068996
+      messages: 
+      output: "GunType\u304CNone\r\nRodType\u304CNone\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("hoge","hoge")]'
+      name: TestMakeWeapon("hoge","hoge")
+      fullName: Tests.ETAttack.TestMakeWeapon("hoge","hoge")
+      resultStatus: 1
+      duration: 0.0030217
+      messages: 
+      output: "GunType\u304CLoad\u3067\u304D\u306A\u3044\r\nRodType\u304CLoad\u3067\u304D\u306A\u3044\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestSetGunType]'
+      name: TestSetGunType
+      fullName: Tests.ETAttack.TestSetGunType
+      resultStatus: 1
+      duration: 0.0042396
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestSetRodType]'
+      name: TestSetRodType
+      fullName: Tests.ETAttack.TestSetRodType
+      resultStatus: 1
+      duration: 0.000264
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestSetWeapon]'
+      name: TestSetWeapon
+      fullName: Tests.ETAttack.TestSetWeapon
+      resultStatus: 1
+      duration: 0.0002356
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack][suite]'
     - id: '[EditMode][Tests.ETKey][suite]'
       name: ETKey
       fullName: Tests.ETKey
       resultStatus: 1
-      duration: 0.0442154
+      duration: 0.0709902
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -478,7 +564,7 @@ MonoBehaviour:
       name: CheckInitNumericKey
       fullName: Tests.ETKey.CheckInitNumericKey
       resultStatus: 1
-      duration: 0.0150026
+      duration: 0.0073817
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -491,11 +577,25 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETKey][suite]'
-    - id: '[EditMode][Tests.ETKey.CheckMoveLeft]'
-      name: CheckMoveLeft
-      fullName: Tests.ETKey.CheckMoveLeft
+    - id: '[EditMode][Tests.ETMoveGeneral][suite]'
+      name: ETMoveGeneral
+      fullName: Tests.ETMoveGeneral
       resultStatus: 1
-      duration: 0.0015594
+      duration: 0.0305741
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[Tests][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestAddDirection]'
+      name: TestAddDirection
+      fullName: Tests.ETMoveGeneral.TestAddDirection
+      resultStatus: 1
+      duration: 0.0005933
       messages: 
       output: 
       stacktrace: 
@@ -505,12 +605,221 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentID: '[EditMode][Tests.ETKey][suite]'
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
+      name: TestAddPosition
+      fullName: Tests.ETMoveGeneral.TestAddPosition
+      resultStatus: 1
+      duration: 0.0099359
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("X",10.0f)]'
+      name: TestAddPosition("X",10.0f)
+      fullName: Tests.ETMoveGeneral.TestAddPosition("X",10.0f)
+      resultStatus: 1
+      duration: 0.0010663
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("X",-10.0f)]'
+      name: TestAddPosition("X",-10.0f)
+      fullName: Tests.ETMoveGeneral.TestAddPosition("X",-10.0f)
+      resultStatus: 1
+      duration: 0.0002017
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("Y",10.0f)]'
+      name: TestAddPosition("Y",10.0f)
+      fullName: Tests.ETMoveGeneral.TestAddPosition("Y",10.0f)
+      resultStatus: 1
+      duration: 0.0001827
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("Y",-10.0f)]'
+      name: TestAddPosition("Y",-10.0f)
+      fullName: Tests.ETMoveGeneral.TestAddPosition("Y",-10.0f)
+      resultStatus: 1
+      duration: 0.000179
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestCollision]'
+      name: TestCollision
+      fullName: Tests.ETMoveGeneral.TestCollision
+      resultStatus: 1
+      duration: 0.0003493
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestGetAntiDirection]'
+      name: TestGetAntiDirection
+      fullName: Tests.ETMoveGeneral.TestGetAntiDirection
+      resultStatus: 1
+      duration: 0.0004668
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetCollision]'
+      name: TestSetGetCollision
+      fullName: Tests.ETMoveGeneral.TestSetGetCollision
+      resultStatus: 1
+      duration: 0.0003132
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetDirection]'
+      name: TestSetGetDirection
+      fullName: Tests.ETMoveGeneral.TestSetGetDirection
+      resultStatus: 1
+      duration: 0.0003468
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetPosition]'
+      name: TestSetGetPosition
+      fullName: Tests.ETMoveGeneral.TestSetGetPosition
+      resultStatus: 1
+      duration: 0.0003147
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetSwitchCollisionKnockBack]'
+      name: TestSetGetSwitchCollisionKnockBack
+      fullName: Tests.ETMoveGeneral.TestSetGetSwitchCollisionKnockBack
+      resultStatus: 1
+      duration: 0.0003176
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetSwitchDamagedKnockBack]'
+      name: TestSetGetSwitchDamagedKnockBack
+      fullName: Tests.ETMoveGeneral.TestSetGetSwitchDamagedKnockBack
+      resultStatus: 1
+      duration: 0.0003154
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetTrigger]'
+      name: TestSetGetTrigger
+      fullName: Tests.ETMoveGeneral.TestSetGetTrigger
+      resultStatus: 1
+      duration: 0.0003337
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+    - id: '[EditMode][Tests.ETMoveGeneral.TestTrigger]'
+      name: TestTrigger
+      fullName: Tests.ETMoveGeneral.TestTrigger
+      resultStatus: 1
+      duration: 0.0002542
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
     - id: '[EditMode][Tests.NewTestScriptEdit][suite]'
       name: NewTestScriptEdit
       fullName: Tests.NewTestScriptEdit
       resultStatus: 1
-      duration: 0.0260511
+      duration: 0.012385
       messages: 
       output: 
       stacktrace: 
@@ -524,7 +833,7 @@ MonoBehaviour:
       name: MyClassTest1
       fullName: Tests.NewTestScriptEdit.MyClassTest1
       resultStatus: 1
-      duration: 0.0006374
+      duration: 0.000663
       messages: 
       output: 
       stacktrace: 
@@ -539,7 +848,7 @@ MonoBehaviour:
       name: MyClassTest2
       fullName: Tests.NewTestScriptEdit.MyClassTest2
       resultStatus: 1
-      duration: 0.0002367
+      duration: 0.0002286
       messages: 
       output: 
       stacktrace: 
@@ -550,13 +859,13 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.NewTestScriptEdit][suite]'
-    m_ResultText: CheckMoveLeft (0.002s)
+    m_ResultText: ETMoveGeneral (0.031s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e0ffd341
-      m_LastClickedID: 1104412640
-      m_ExpandedIDs: 30e77fa2e89758a7a50c29023beef202ea2b8c7bffffff7f
+      m_SelectedIDs: e0cc9656
+      m_LastClickedID: 1452723424
+      m_ExpandedIDs: d5b84f9b30e77fa2e89758a7a50c29023beef20227f1d631c138f052e0cc96563a4f8b60ea2b8c7ba56df77effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -638,9 +947,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 200
+    x: 204
     y: 73
-    width: 200
+    width: 1008
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
@@ -674,10 +983,10 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 200
+      width: 1008
       height: 1030
-    m_Scale: {x: 0.1953125, y: 0.1953125}
-    m_Translation: {x: 100, y: 515}
+    m_Scale: {x: 0.984375, y: 0.98437494}
+    m_Translation: {x: 504, y: 515}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -685,14 +994,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -512
-      y: -2636.8
+      y: -523.1746
       width: 1024
-      height: 5273.6
+      height: 1046.3492
     m_MinimalGUI: 1
-  m_defaultScale: 0.1953125
+  m_defaultScale: 0.984375
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 200, y: 1047}
+  m_LastWindowPixelSize: {x: 1008, y: 1047}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -720,29 +1029,29 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 198
+    width: 202
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9a3f0000
-      m_LastClickedID: 16282
-      m_ExpandedIDs: decaffff28cbffff3acbffff90cbffffcecbffffe0cbffff3accffffacccffffbeccffff18cdffff54cdffff66cdffffc4cdffff00ceffff12ceffff6cceffffd0ceffff82cfffff1ad0ffff66d0ffffb6d0ffff08d1ffff58d1ffffe4d1fffff6d1ffff46d2ffff62d2ffffaed2ffff02d3ffff98d3ffffaad3ffff44d6ffff56d6ffff6ed6ffffacd9ffff8cdbffffa2dbffff00dcffff58dcffffb4dcffff0cddffff60ddffffbceaffff4aebffff92ebffffcaebffffdcebffff2eecffffcaecffffeaecffff46edffff54eeffff66eeffffbceeffffdceeffff04efffffeaf0ffffdc340000f83400000e360000ca360000a0380000683e0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 467affff747affff2c81ffff5281ffffa68dffffbc8dffffcc91ffffde91ffffe494ffff0095ffff54a2ffff66a2ffffccaaffffdeaaffffccabffffe2abffffe8b7ffff02b8ffffe4b9fffff6b9ffff14bbffff2abbffff8ebbffffb2bbffff04bdffff16bdffff6ebdffff16beffff36beffff8ebeffffaebeffffd2beffff1ec1ffff30c1ffff86c1ffff8ac1ffff9cc1fffffcc1ffffc0c7ffffd2c7ffffeec7ffffaecbffffc0cbffffd8cbffffb6d4ffffccd4ffff08deffff1adeffff5adeffff6cdeffff9ae1ffffb0e1ffffaee4ffffc0e4ffffb8e5ffffcae5ffff1ae6ffff6ae6ffff02e7ffffd0e7ffffb6eeffff10efffff8cefffff9eefffffeeefffff06f0ffffacf0ffff74f3ffff8af3ffffeef3ffff82f4ffff9cf4ffff62faffff74faffff2afbffffbefbffff8a290000da2d00009e300000e034000076350000f23700005a3a0000b03a0000f03a00009c3e00002c4200008842000060450000604900003a500000b851000094520000c45b0000be600000f86000002861000068660000466800002c6a00008a6a00002c710000587100008a710000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: RangeAttack
+        m_OriginalName: RangeAttack
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -24746
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -773,9 +1082,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 200
+    x: 204
     y: 73
-    width: 200
+    width: 1008
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 07ff113979cb7c7499f9cb40221fd731
@@ -784,9 +1093,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -27.53096, y: -184.72798, z: -16.288994}
+    m_Target: {x: 370.91238, y: 51.678665, z: -11}
     speed: 2
-    m_Value: {x: -27.53096, y: -184.72798, z: -16.288994}
+    m_Value: {x: 370.91238, y: 51.678665, z: -11}
   m_RenderMode: 3
   m_CameraMode:
     drawMode: 3
@@ -818,9 +1127,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1646.308
+    m_Target: 2155.5913
     speed: 2
-    m_Value: 1646.308
+    m_Value: 2155.5913
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -879,9 +1188,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 404
+    x: 1216
     y: 73
-    width: 230
+    width: 293
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -896,20 +1205,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Tests/PlayMode
+    - Assets/Resources/Prefab
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Tests/PlayMode
+  - Assets/Resources/Prefab
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\tsuka\ZenmetsuJungle
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 54300000
-    m_LastClickedID: 12372
-    m_ExpandedIDs: 00000000002e00004e3000006630000000ca9a3b
+    m_SelectedIDs: be630000
+    m_LastClickedID: 25534
+    m_ExpandedIDs: 0000000006260000082800002a280000e466000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -937,7 +1246,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 0000000006260000082800002a280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -968,18 +1277,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 02050000220500007a0500000000000040050000e6770000020600009e070000a0050000482d0a001ad002008a24000096220000402e00008627000056270000362700007efc00004c27000096eefeffdcb5feff082c00003c300000542a0000722a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PTKey
-      m_OriginalName: PTKey
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13100
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
@@ -1013,9 +1322,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1133
+    x: 1216
     y: 73
-    width: 296
+    width: 293
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &18
@@ -1157,9 +1466,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 638
+    x: 1513
     y: 73
-    width: 1280
+    width: 405
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []

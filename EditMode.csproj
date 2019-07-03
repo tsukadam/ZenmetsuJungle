@@ -60,7 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Tests\EditMode\Editer\ETAttack.cs" />
     <Compile Include="Assets\Tests\EditMode\Editer\ETKey.cs" />
+    <Compile Include="Assets\Tests\EditMode\Editer\ETMoveGeneral.cs" />
+    <Compile Include="Assets\Tests\EditMode\Editer\ETPlayer.cs" />
     <Compile Include="Assets\Tests\EditMode\Editer\NewTestScriptEdit.cs" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity20180301/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
