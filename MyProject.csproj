@@ -61,10 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ControllerAttack.cs" />
+    <Compile Include="Assets\Scripts\ControllerCharaGeneral.cs" />
+    <Compile Include="Assets\Scripts\ControllerEnemy.cs" />
     <Compile Include="Assets\Scripts\ControllerKey.cs" />
-    <Compile Include="Assets\Scripts\ControllerMoveGeneral.cs" />
     <Compile Include="Assets\Scripts\ControllerPlayer.cs" />
     <Compile Include="Assets\Scripts\ControllerWeapon.cs" />
+    <Compile Include="Assets\Scripts\DebugLifeCounter.cs" />
     <Compile Include="Assets\Scripts\MyClass.cs" />
     <Compile Include="Assets\Scripts\StateKey.cs" />
     <Reference Include="UnityEngine.AIModule">

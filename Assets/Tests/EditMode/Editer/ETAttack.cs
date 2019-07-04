@@ -18,37 +18,29 @@ namespace Tests
         }
 
         [Test]
-        public void TestSetRodType()
+        public void TestSetGetWeaponType()
         {
-            Player.GetComponent<ControllerAttack>().SetRodType("Sword");
-            string Type = Player.GetComponent<ControllerAttack>().GetRodType();
+            Player.GetComponent<ControllerAttack>().SetWeaponTypeDetail("Sword");
+            string Type = Player.GetComponent<ControllerAttack>().GetWeaponTypeDetail();
             Assert.IsTrue(Type == "Sword");
         }
         [Test]
-        public void TestSetGunType()
+        public void TestEquipWeapon()
         {
-            Player.GetComponent<ControllerAttack>().SetGunType("Bullet");
-            string Type = Player.GetComponent<ControllerAttack>().GetGunType();
-            Assert.IsTrue(Type == "Bullet");
+            Player.GetComponent<ControllerAttack>().EquipWeapon("GunBullet");
+            string WeaponType = Player.GetComponent<ControllerAttack>().GetWeaponTypeDetail();
+            GameObject WeaponPrefab= Player.GetComponent<ControllerAttack>().GetWeaponPrefab();
+            Assert.IsTrue(WeaponPrefab != null);
+            Assert.IsTrue(WeaponType == "GunBullet");
         }
-        [Test]
-        public void TestSetWeapon()
+        [TestCase("GunBullet")]
+        [TestCase("None")]
+        [TestCase("hoge")]
+        public void TestMakeWeapon(string WeaponType)
         {
-            Player.GetComponent<ControllerAttack>().SetWeapon("Bullet","Sword");
-            string TypeGun = Player.GetComponent<ControllerAttack>().GetGunType();
-            string TypeRod = Player.GetComponent<ControllerAttack>().GetRodType();
-            Assert.IsTrue(TypeGun == "Bullet");
-            Assert.IsTrue(TypeRod == "Sword");
-        }
-        [TestCase("GunBullet","RodSword")]
-        [TestCase("None", "None")]
-        [TestCase("hoge", "hoge")]
-        public void TestMakeWeapon(string GunType,string RodType)
-        {
-            string Direction = Player.GetComponent<ControllerMoveGeneral>().GetDirection();
-            Player.GetComponent<ControllerAttack>().SetWeapon(GunType,RodType);
-            Player.GetComponent<ControllerAttack>().MakeGun();
-            Player.GetComponent<ControllerAttack>().MakeRod();
+            string Direction = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
+            Player.GetComponent<ControllerAttack>().EquipWeapon(WeaponType);
+            Player.GetComponent<ControllerAttack>().MakeWeapon();
         }
     }
 }

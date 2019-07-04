@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 324}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1067
-  m_MinSize: {x: 917, y: 274}
-  m_MaxSize: {x: 22012, y: 10024}
+  m_MinSize: {x: 785, y: 224}
+  m_MaxSize: {x: 16010, y: 4024}
   vertical: 0
-  controlID: 53
+  controlID: 28
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 1067
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -186,7 +186,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 0
-    width: 1012
+    width: 789
     height: 1067
   m_MinSize: {x: 204, y: 224}
   m_MaxSize: {x: 4004, y: 4024}
@@ -212,21 +212,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1216
+    x: 993
     y: 0
-    width: 297
+    width: 520
     height: 1067
-  m_MinSize: {x: 234, y: 274}
-  m_MaxSize: {x: 10004, y: 10024}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 10}
   - {fileID: 11}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,9 +247,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1216
+    x: 993
     y: 73
-    width: 293
+    width: 516
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -388,7 +388,7 @@ MonoBehaviour:
       name: ZenmetsuJungle
       fullName: ZenmetsuJungle
       resultStatus: 1
-      duration: 0.2842274
+      duration: 0.2975302
       messages: 
       output: 
       stacktrace: 
@@ -402,7 +402,7 @@ MonoBehaviour:
       name: EditMode.dll
       fullName: C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/EditMode.dll
       resultStatus: 1
-      duration: 0.2235707
+      duration: 0.2271081
       messages: 
       output: 
       stacktrace: 
@@ -416,7 +416,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 0.1888147
+      duration: 0.189626
       messages: 
       output: 
       stacktrace: 
@@ -430,7 +430,7 @@ MonoBehaviour:
       name: ETAttack
       fullName: Tests.ETAttack
       resultStatus: 1
-      duration: 0.0494381
+      duration: 0.0691735
       messages: 
       output: 
       stacktrace: 
@@ -440,11 +440,26 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[Tests][suite]'
+    - id: '[EditMode][Tests.ETAttack.TestEquipWeapon]'
+      name: TestEquipWeapon
+      fullName: Tests.ETAttack.TestEquipWeapon
+      resultStatus: 1
+      duration: 0.011381
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETAttack][suite]'
     - id: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
       name: TestMakeWeapon
       fullName: Tests.ETAttack.TestMakeWeapon
       resultStatus: 1
-      duration: 0.0311839
+      duration: 0.0347211
       messages: 
       output: 
       stacktrace: 
@@ -454,11 +469,11 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[EditMode][Tests.ETAttack][suite]'
-    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("GunBullet","RodSword")]'
-      name: TestMakeWeapon("GunBullet","RodSword")
-      fullName: Tests.ETAttack.TestMakeWeapon("GunBullet","RodSword")
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("GunBullet")]'
+      name: TestMakeWeapon("GunBullet")
+      fullName: Tests.ETAttack.TestMakeWeapon("GunBullet")
       resultStatus: 1
-      duration: 0.0079327
+      duration: 0.0022682
       messages: 
       output: 
       stacktrace: 
@@ -469,13 +484,13 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
-    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("None","None")]'
-      name: TestMakeWeapon("None","None")
-      fullName: Tests.ETAttack.TestMakeWeapon("None","None")
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("None")]'
+      name: TestMakeWeapon("None")
+      fullName: Tests.ETAttack.TestMakeWeapon("None")
       resultStatus: 1
-      duration: 0.0068996
+      duration: 0.0053702
       messages: 
-      output: "GunType\u304CNone\r\nRodType\u304CNone\r\n"
+      output: "SeaponType\u304CNone\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -484,13 +499,13 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
-    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("hoge","hoge")]'
-      name: TestMakeWeapon("hoge","hoge")
-      fullName: Tests.ETAttack.TestMakeWeapon("hoge","hoge")
+    - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("hoge")]'
+      name: TestMakeWeapon("hoge")
+      fullName: Tests.ETAttack.TestMakeWeapon("hoge")
       resultStatus: 1
-      duration: 0.0030217
+      duration: 0.0015575
       messages: 
-      output: "GunType\u304CLoad\u3067\u304D\u306A\u3044\r\nRodType\u304CLoad\u3067\u304D\u306A\u3044\r\n"
+      output: "SeaponType\u304CLoad\u3067\u304D\u306A\u3044\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -499,11 +514,11 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
-    - id: '[EditMode][Tests.ETAttack.TestSetGunType]'
-      name: TestSetGunType
-      fullName: Tests.ETAttack.TestSetGunType
+    - id: '[EditMode][Tests.ETAttack.TestSetGetWeaponType]'
+      name: TestSetGetWeaponType
+      fullName: Tests.ETAttack.TestSetGetWeaponType
       resultStatus: 1
-      duration: 0.0042396
+      duration: 0.0002516
       messages: 
       output: 
       stacktrace: 
@@ -514,11 +529,25 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETAttack][suite]'
-    - id: '[EditMode][Tests.ETAttack.TestSetRodType]'
-      name: TestSetRodType
-      fullName: Tests.ETAttack.TestSetRodType
+    - id: '[EditMode][Tests.ETCharaGeneral][suite]'
+      name: ETCharaGeneral
+      fullName: Tests.ETCharaGeneral
       resultStatus: 1
-      duration: 0.000264
+      duration: 0.0306288
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[Tests][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddDirection]'
+      name: TestAddDirection
+      fullName: Tests.ETCharaGeneral.TestAddDirection
+      resultStatus: 1
+      duration: 0.0005419
       messages: 
       output: 
       stacktrace: 
@@ -528,12 +557,26 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentID: '[EditMode][Tests.ETAttack][suite]'
-    - id: '[EditMode][Tests.ETAttack.TestSetWeapon]'
-      name: TestSetWeapon
-      fullName: Tests.ETAttack.TestSetWeapon
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
+      name: TestAddPosition
+      fullName: Tests.ETCharaGeneral.TestAddPosition
       resultStatus: 1
-      duration: 0.0002356
+      duration: 0.0067362
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("X",10.0f)]'
+      name: TestAddPosition("X",10.0f)
+      fullName: Tests.ETCharaGeneral.TestAddPosition("X",10.0f)
+      resultStatus: 1
+      duration: 0.0008818
       messages: 
       output: 
       stacktrace: 
@@ -543,12 +586,251 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentID: '[EditMode][Tests.ETAttack][suite]'
+      parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("X",-10.0f)]'
+      name: TestAddPosition("X",-10.0f)
+      fullName: Tests.ETCharaGeneral.TestAddPosition("X",-10.0f)
+      resultStatus: 1
+      duration: 0.00019
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("Y",10.0f)]'
+      name: TestAddPosition("Y",10.0f)
+      fullName: Tests.ETCharaGeneral.TestAddPosition("Y",10.0f)
+      resultStatus: 1
+      duration: 0.0001824
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("Y",-10.0f)]'
+      name: TestAddPosition("Y",-10.0f)
+      fullName: Tests.ETCharaGeneral.TestAddPosition("Y",-10.0f)
+      resultStatus: 1
+      duration: 0.0001794
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestCollision]'
+      name: TestCollision
+      fullName: Tests.ETCharaGeneral.TestCollision
+      resultStatus: 1
+      duration: 0.0003271
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestGetAntiDirection]'
+      name: TestGetAntiDirection
+      fullName: Tests.ETCharaGeneral.TestGetAntiDirection
+      resultStatus: 1
+      duration: 0.0004361
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetCharaType]'
+      name: TestSetGetCharaType
+      fullName: Tests.ETCharaGeneral.TestSetGetCharaType
+      resultStatus: 1
+      duration: 0.0003333
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetCollision]'
+      name: TestSetGetCollision
+      fullName: Tests.ETCharaGeneral.TestSetGetCollision
+      resultStatus: 1
+      duration: 0.0002855
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetDirection]'
+      name: TestSetGetDirection
+      fullName: Tests.ETCharaGeneral.TestSetGetDirection
+      resultStatus: 1
+      duration: 0.0003286
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetPosition]'
+      name: TestSetGetPosition
+      fullName: Tests.ETCharaGeneral.TestSetGetPosition
+      resultStatus: 1
+      duration: 0.0003023
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetSwitchCollisionKnockBack]'
+      name: TestSetGetSwitchCollisionKnockBack
+      fullName: Tests.ETCharaGeneral.TestSetGetSwitchCollisionKnockBack
+      resultStatus: 1
+      duration: 0.0003308
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetSwitchDamagedKnockBack]'
+      name: TestSetGetSwitchDamagedKnockBack
+      fullName: Tests.ETCharaGeneral.TestSetGetSwitchDamagedKnockBack
+      resultStatus: 1
+      duration: 0.0003165
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestSetGetTrigger]'
+      name: TestSetGetTrigger
+      fullName: Tests.ETCharaGeneral.TestSetGetTrigger
+      resultStatus: 1
+      duration: 0.0003169
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETCharaGeneral.TestTrigger]'
+      name: TestTrigger
+      fullName: Tests.ETCharaGeneral.TestTrigger
+      resultStatus: 1
+      duration: 0.0002585
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
+    - id: '[EditMode][Tests.ETEnemy][suite]'
+      name: ETEnemy
+      fullName: Tests.ETEnemy
+      resultStatus: 1
+      duration: 0.0289389
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[Tests][suite]'
+    - id: '[EditMode][Tests.ETEnemy.ETEnemySimplePasses]'
+      name: ETEnemySimplePasses
+      fullName: Tests.ETEnemy.ETEnemySimplePasses
+      resultStatus: 1
+      duration: 0.0001813
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETEnemy][suite]'
+    - id: '[EditMode][Tests.ETEnemy.ETEnemyWithEnumeratorPasses]'
+      name: ETEnemyWithEnumeratorPasses
+      fullName: Tests.ETEnemy.ETEnemyWithEnumeratorPasses
+      resultStatus: 1
+      duration: 0.0189159
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[EditMode][Tests.ETEnemy][suite]'
     - id: '[EditMode][Tests.ETKey][suite]'
       name: ETKey
       fullName: Tests.ETKey
       resultStatus: 1
-      duration: 0.0709902
+      duration: 0.0134838
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -564,7 +846,7 @@ MonoBehaviour:
       name: CheckInitNumericKey
       fullName: Tests.ETKey.CheckInitNumericKey
       resultStatus: 1
-      duration: 0.0073817
+      duration: 0.0061075
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -577,11 +859,11 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETKey][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral][suite]'
-      name: ETMoveGeneral
-      fullName: Tests.ETMoveGeneral
+    - id: '[EditMode][Tests.ETWeapon][suite]'
+      name: ETWeapon
+      fullName: Tests.ETWeapon
       resultStatus: 1
-      duration: 0.0305741
+      duration: 0.0055569
       messages: 
       output: 
       stacktrace: 
@@ -591,11 +873,11 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[Tests][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestAddDirection]'
-      name: TestAddDirection
-      fullName: Tests.ETMoveGeneral.TestAddDirection
+    - id: '[EditMode][Tests.ETWeapon.TestSetGetTypeDetail]'
+      name: TestSetGetTypeDetail
+      fullName: Tests.ETWeapon.TestSetGetTypeDetail
       resultStatus: 1
-      duration: 0.0005933
+      duration: 0.0007626
       messages: 
       output: 
       stacktrace: 
@@ -605,221 +887,12 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
-      name: TestAddPosition
-      fullName: Tests.ETMoveGeneral.TestAddPosition
-      resultStatus: 1
-      duration: 0.0099359
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("X",10.0f)]'
-      name: TestAddPosition("X",10.0f)
-      fullName: Tests.ETMoveGeneral.TestAddPosition("X",10.0f)
-      resultStatus: 1
-      duration: 0.0010663
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("X",-10.0f)]'
-      name: TestAddPosition("X",-10.0f)
-      fullName: Tests.ETMoveGeneral.TestAddPosition("X",-10.0f)
-      resultStatus: 1
-      duration: 0.0002017
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("Y",10.0f)]'
-      name: TestAddPosition("Y",10.0f)
-      fullName: Tests.ETMoveGeneral.TestAddPosition("Y",10.0f)
-      resultStatus: 1
-      duration: 0.0001827
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestAddPosition("Y",-10.0f)]'
-      name: TestAddPosition("Y",-10.0f)
-      fullName: Tests.ETMoveGeneral.TestAddPosition("Y",-10.0f)
-      resultStatus: 1
-      duration: 0.000179
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestCollision]'
-      name: TestCollision
-      fullName: Tests.ETMoveGeneral.TestCollision
-      resultStatus: 1
-      duration: 0.0003493
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestGetAntiDirection]'
-      name: TestGetAntiDirection
-      fullName: Tests.ETMoveGeneral.TestGetAntiDirection
-      resultStatus: 1
-      duration: 0.0004668
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetCollision]'
-      name: TestSetGetCollision
-      fullName: Tests.ETMoveGeneral.TestSetGetCollision
-      resultStatus: 1
-      duration: 0.0003132
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetDirection]'
-      name: TestSetGetDirection
-      fullName: Tests.ETMoveGeneral.TestSetGetDirection
-      resultStatus: 1
-      duration: 0.0003468
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetPosition]'
-      name: TestSetGetPosition
-      fullName: Tests.ETMoveGeneral.TestSetGetPosition
-      resultStatus: 1
-      duration: 0.0003147
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetSwitchCollisionKnockBack]'
-      name: TestSetGetSwitchCollisionKnockBack
-      fullName: Tests.ETMoveGeneral.TestSetGetSwitchCollisionKnockBack
-      resultStatus: 1
-      duration: 0.0003176
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetSwitchDamagedKnockBack]'
-      name: TestSetGetSwitchDamagedKnockBack
-      fullName: Tests.ETMoveGeneral.TestSetGetSwitchDamagedKnockBack
-      resultStatus: 1
-      duration: 0.0003154
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestSetGetTrigger]'
-      name: TestSetGetTrigger
-      fullName: Tests.ETMoveGeneral.TestSetGetTrigger
-      resultStatus: 1
-      duration: 0.0003337
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
-    - id: '[EditMode][Tests.ETMoveGeneral.TestTrigger]'
-      name: TestTrigger
-      fullName: Tests.ETMoveGeneral.TestTrigger
-      resultStatus: 1
-      duration: 0.0002542
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentID: '[EditMode][Tests.ETMoveGeneral][suite]'
+      parentID: '[EditMode][Tests.ETWeapon][suite]'
     - id: '[EditMode][Tests.NewTestScriptEdit][suite]'
       name: NewTestScriptEdit
       fullName: Tests.NewTestScriptEdit
       resultStatus: 1
-      duration: 0.012385
+      duration: 0.0111914
       messages: 
       output: 
       stacktrace: 
@@ -833,7 +906,7 @@ MonoBehaviour:
       name: MyClassTest1
       fullName: Tests.NewTestScriptEdit.MyClassTest1
       resultStatus: 1
-      duration: 0.000663
+      duration: 0.0006699
       messages: 
       output: 
       stacktrace: 
@@ -848,7 +921,7 @@ MonoBehaviour:
       name: MyClassTest2
       fullName: Tests.NewTestScriptEdit.MyClassTest2
       resultStatus: 1
-      duration: 0.0002286
+      duration: 0.0002268
       messages: 
       output: 
       stacktrace: 
@@ -859,13 +932,13 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.NewTestScriptEdit][suite]'
-    m_ResultText: ETMoveGeneral (0.031s)
+    m_ResultText: TestSetGetTypeDetail (0.001s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e0cc9656
-      m_LastClickedID: 1452723424
-      m_ExpandedIDs: d5b84f9b30e77fa2e89758a7a50c29023beef20227f1d631c138f052e0cc96563a4f8b60ea2b8c7ba56df77effffff7f
+      m_SelectedIDs: 124a3153
+      m_LastClickedID: 1395739154
+      m_ExpandedIDs: d5b84f9b30e77fa2e89758a7a50c29023beef20227f1d631fb4f064fc138f052e0cc96563a4f8b60ea2b8c7ba56df77effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -949,7 +1022,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 73
-    width: 1008
+    width: 785
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
@@ -983,10 +1056,10 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1008
+      width: 785
       height: 1030
-    m_Scale: {x: 0.984375, y: 0.98437494}
-    m_Translation: {x: 504, y: 515}
+    m_Scale: {x: 0.76660156, y: 0.76660156}
+    m_Translation: {x: 392.5, y: 515}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -994,14 +1067,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -512
-      y: -523.1746
+      y: -671.7962
       width: 1024
-      height: 1046.3492
+      height: 1343.5924
     m_MinimalGUI: 1
-  m_defaultScale: 0.984375
+  m_defaultScale: 0.76660156
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1008, y: 1047}
+  m_LastWindowPixelSize: {x: 785, y: 1047}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -1035,23 +1108,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 90310000
       m_LastClickedID: 0
-      m_ExpandedIDs: 467affff747affff2c81ffff5281ffffa68dffffbc8dffffcc91ffffde91ffffe494ffff0095ffff54a2ffff66a2ffffccaaffffdeaaffffccabffffe2abffffe8b7ffff02b8ffffe4b9fffff6b9ffff14bbffff2abbffff8ebbffffb2bbffff04bdffff16bdffff6ebdffff16beffff36beffff8ebeffffaebeffffd2beffff1ec1ffff30c1ffff86c1ffff8ac1ffff9cc1fffffcc1ffffc0c7ffffd2c7ffffeec7ffffaecbffffc0cbffffd8cbffffb6d4ffffccd4ffff08deffff1adeffff5adeffff6cdeffff9ae1ffffb0e1ffffaee4ffffc0e4ffffb8e5ffffcae5ffff1ae6ffff6ae6ffff02e7ffffd0e7ffffb6eeffff10efffff8cefffff9eefffffeeefffff06f0ffffacf0ffff74f3ffff8af3ffffeef3ffff82f4ffff9cf4ffff62faffff74faffff2afbffffbefbffff8a290000da2d00009e300000e034000076350000f23700005a3a0000b03a0000f03a00009c3e00002c4200008842000060450000604900003a500000b851000094520000c45b0000be600000f86000002861000068660000466800002c6a00008a6a00002c710000587100008a710000
+      m_ExpandedIDs: 80c0ffff8ee5ffffc6e5ffffd4faffff0cfbffffd4fbffff10290000ac2900000a2a000090310000a2310000ce31000000320000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: RangeAttack
-        m_OriginalName: RangeAttack
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -24746
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -1084,7 +1157,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 73
-    width: 1008
+    width: 785
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 07ff113979cb7c7499f9cb40221fd731
@@ -1093,9 +1166,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 370.91238, y: 51.678665, z: -11}
+    m_Target: {x: 89.8874, y: 76.41261, z: -3.4885113}
     speed: 2
-    m_Value: {x: 370.91238, y: 51.678665, z: -11}
+    m_Value: {x: 89.8874, y: 76.41261, z: -3.4885113}
   m_RenderMode: 3
   m_CameraMode:
     drawMode: 3
@@ -1127,9 +1200,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2155.5913
+    m_Target: 1410.9453
     speed: 2
-    m_Value: 2155.5913
+    m_Value: 1410.9453
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1188,9 +1261,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1216
+    x: 993
     y: 73
-    width: 293
+    width: 516
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -1205,20 +1278,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefab
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefab
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\tsuka\ZenmetsuJungle
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: be630000
-    m_LastClickedID: 25534
-    m_ExpandedIDs: 0000000006260000082800002a280000e466000000ca9a3b
+    m_SelectedIDs: d0270000
+    m_LastClickedID: 10192
+    m_ExpandedIDs: 000000001c260000b0270000242800004828000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1246,7 +1319,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000006260000082800002a280000
+    m_ExpandedIDs: 000000001c260000b02700002428000048280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1271,8 +1344,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 90310000
+    m_LastClickedInstanceID: 12688
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 02050000220500007a0500000000000040050000e6770000020600009e070000a0050000482d0a001ad002008a24000096220000402e00008627000056270000362700007efc00004c27000096eefeffdcb5feff082c00003c300000542a0000722a0000
     m_RenameOverlay:
@@ -1322,9 +1395,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1216
+    x: 993
     y: 73
-    width: 293
+    width: 516
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &18

@@ -4,71 +4,82 @@ using UnityEngine;
 
 public class ControllerPlayer : MonoBehaviour
 {
-    public int SwitchBlockKeyZ = 0;
+    //Playerにアタッチする
+    //Player特有の行動を制御する
+
     private IEnumerator Routine;
 
     public float MoveAmountOneKey=10f;
+    private ControllerCharaGeneral ThisCharaGeneral;
+    private ControllerAttack ThisAttack;
 
-    private void SetPlayerWeapon(string GunType,string RodType)
+
+
+    private void SetPlayerWeapon(string WeaponType)
     {
-        gameObject.GetComponent<ControllerAttack>().SetWeapon(GunType,RodType);
+        ThisAttack.EquipWeapon(WeaponType);
     }
-    private void MakePlayerGun()
+    private void MakePlayerWeapon()
     {
-        string Direction = gameObject.GetComponent<ControllerMoveGeneral>().GetDirection();
-        gameObject.GetComponent<ControllerAttack>().MakeGun();
-    }
-    private void MakePlayerRod()
-    {
-        string Direction = gameObject.GetComponent<ControllerMoveGeneral>().GetDirection();
-        gameObject.GetComponent<ControllerAttack>().MakeRod();
+        ThisAttack.MakeWeapon();
     }
 
     private void CheckKey()
     {
-        if (gameObject.GetComponent<ControllerMoveGeneral>() != null)
+        if (ThisCharaGeneral != null)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                gameObject.GetComponent<ControllerMoveGeneral>().AddPosition("X", MoveAmountOneKey * -1);
-                gameObject.GetComponent<ControllerMoveGeneral>().AddDirection("X", MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddPosition("X", MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddDirection("X", MoveAmountOneKey * -1);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                gameObject.GetComponent<ControllerMoveGeneral>().AddPosition("X", MoveAmountOneKey);
-                gameObject.GetComponent<ControllerMoveGeneral>().AddDirection("X", MoveAmountOneKey);
+                ThisCharaGeneral.AddPosition("X", MoveAmountOneKey);
+                ThisCharaGeneral.AddDirection("X", MoveAmountOneKey);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                gameObject.GetComponent<ControllerMoveGeneral>().AddPosition("Y", MoveAmountOneKey);
-                gameObject.GetComponent<ControllerMoveGeneral>().AddDirection("Y", MoveAmountOneKey);
+                ThisCharaGeneral.AddPosition("Y", MoveAmountOneKey);
+                ThisCharaGeneral.AddDirection("Y", MoveAmountOneKey);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                gameObject.GetComponent<ControllerMoveGeneral>().AddPosition("Y", MoveAmountOneKey * -1);
-                gameObject.GetComponent<ControllerMoveGeneral>().AddDirection("Y", MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddPosition("Y", MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddDirection("Y", MoveAmountOneKey * -1);
             }
-            if (Input.GetKey(KeyCode.Z)&SwitchBlockKeyZ==0)
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                SetPlayerWeapon("GunBullet", "None");
-                MakePlayerGun();
-                MakePlayerRod();
-                Routine = null;
-                Routine = BlockKeyZCoroutine();
-                StartCoroutine(Routine);
+                MakePlayerWeapon();
             }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                if (ThisAttack.GetWeaponTypeDetail() != "GunBullet")
+                {
+                    SetPlayerWeapon("GunBullet");
+                }
+                else
+                {
+                    SetPlayerWeapon("RodSword");
+                }
+            }
+
         }
 
     }
-    IEnumerator BlockKeyZCoroutine()
+    private void AddInfoToCharaGeneralAsPlayer()
     {
-        SwitchBlockKeyZ = 1;
-        yield return new WaitForSeconds(0.5f);
-        SwitchBlockKeyZ = 0;
+        ThisCharaGeneral.SetCharaType("Player");
+        ThisCharaGeneral.SetSwitchCollisionKnockBack(1);
+        ThisCharaGeneral.SetSwitchDamagedKnockBack(1);
     }
 
     private void Start()
     {
+            ThisCharaGeneral = gameObject.GetComponent<ControllerCharaGeneral>();
+        ThisAttack = gameObject.GetComponent<ControllerAttack>();
+
+        AddInfoToCharaGeneralAsPlayer();
     }
     private void Update()
     {

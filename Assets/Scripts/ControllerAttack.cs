@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ControllerAttack : MonoBehaviour
 {
-    public string RodType;
-    public string GunType;
-    public GameObject RodPrefab;
-    public GameObject GunPrefab;
+    //当たり判定を伴う行動を持つ全てのCharaにアタッチする
+    //PlayerやEnemyの指示でWeaponを生成する
+    //攻撃の詳細はWeaponが持つ。攻撃パターンはPlayerやEnemyが持つ
 
-    public void SetWeapon(string GunType,string RodType)
+    public string WeaponTypeDetail;
+    public GameObject WeaponPrefab;
+ 
+    public void EquipWeapon(string TypeDetail)
     {
-        SetGunType(GunType);
-        SetRodType(RodType);
-        SetGun();
-        SetRod();
+        SetWeaponTypeDetail(TypeDetail);       
+        LoadWeaponPrefab();
     }
     public void InstantiateWeapon(GameObject WeaponPrefab)
     {
@@ -22,14 +22,15 @@ public class ControllerAttack : MonoBehaviour
         Weapon.transform.SetParent(gameObject.transform);
         Vector3 WeaponPosition = new Vector3(0, 0, 0);
 
-        if (Weapon.GetComponent<ControllerWeapon>() == null& gameObject.GetComponent<ControllerMoveGeneral>())
+        if (Weapon.GetComponent<ControllerWeapon>() == null& gameObject.GetComponent<ControllerCharaGeneral>())
         {
-            Debug.Log("WeaponのPrefabにControllerWeaponがアタッチされていない。または攻撃者にControllerMoveGeneralがアタッチされていない");
+            Debug.Log("WeaponのPrefabにControllerWeaponがアタッチされていない。または攻撃者にControllerCharaGeneralがアタッチされていない");
         }
         else
         {
-            string AttackDirection = gameObject.GetComponent<ControllerMoveGeneral>().GetDirection();
+            string AttackDirection = gameObject.GetComponent<ControllerCharaGeneral>().GetDirection();
             Weapon.GetComponent<ControllerWeapon>().Direction = AttackDirection;
+            Weapon.GetComponent<ControllerWeapon>().SetTypeDetail(WeaponTypeDetail);
             if (AttackDirection == "Left") { WeaponPosition = new Vector3(-40, 0, 0); }
             else if (AttackDirection == "Right") { WeaponPosition = new Vector3(40, 0, 0); }
             else if (AttackDirection == "Up") { WeaponPosition = new Vector3(0, 80, 0); }
@@ -47,61 +48,39 @@ public class ControllerAttack : MonoBehaviour
         }
 
     }
-    public void SetGun()
+    public void LoadWeaponPrefab()
     {
-        if (GunType == "None")
-        { Debug.Log("GunTypeがNone");
-            GunPrefab = null;
+        if (WeaponTypeDetail == "None")
+        { Debug.Log("SeaponTypeがNone");
+            WeaponPrefab = null;
         }
-        else if ((GameObject)Resources.Load("prefab/" + GunType) == null)
-        { Debug.Log("GunTypeがLoadできない"); }
+        else if ((GameObject)Resources.Load("prefab/" + WeaponTypeDetail) == null)
+        { Debug.Log("SeaponTypeがLoadできない"); }
         else
         {
-            GunPrefab = (GameObject)Resources.Load("prefab/" + GunType);
+            WeaponPrefab = (GameObject)Resources.Load("prefab/" + WeaponTypeDetail);
+        }
+    }
+    public GameObject GetWeaponPrefab()
+    {
+        return WeaponPrefab;
+    }
+
+
+    public void MakeWeapon()
+    {
+        if (WeaponPrefab!=null) { 
+            InstantiateWeapon(WeaponPrefab);
         }
     }
 
-    public void SetRod()
+    public void SetWeaponTypeDetail(string TypeDetail)
     {
-        if (RodType == "None")
-        { Debug.Log("RodTypeがNone");
-            RodPrefab = null;
-        }
-        else if ((GameObject)Resources.Load("prefab/" + RodType) == null)
-        { Debug.Log("RodTypeがLoadできない"); }
-        else
-        {
-            RodPrefab = (GameObject)Resources.Load("prefab/" + RodType);
-        }
-
+        WeaponTypeDetail = TypeDetail;
     }
-    public void MakeGun()
+    public string GetWeaponTypeDetail()
     {
-        if (GunPrefab!=null) { 
-            InstantiateWeapon(GunPrefab);
-        }
-    }
-    public void MakeRod() { 
-        if (RodPrefab!=null) {
-            InstantiateWeapon(RodPrefab);
-        }
-    }
-
-    public void SetRodType(string Type)
-    {
-        RodType = Type;
-    }
-    public string GetRodType()
-    {
-        return RodType;
-    }
-    public void SetGunType(string Type)
-    {
-        GunType = Type;
-    }
-    public string GetGunType()
-    {
-        return GunType;
+        return WeaponTypeDetail;
     }
 
 }
