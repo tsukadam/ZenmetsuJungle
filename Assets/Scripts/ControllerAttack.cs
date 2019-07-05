@@ -5,57 +5,40 @@ using UnityEngine;
 public class ControllerAttack : MonoBehaviour
 {
     //当たり判定を伴う行動を持つ全てのCharaにアタッチする
-    //PlayerやEnemyの指示でWeaponを生成する
-    //攻撃の詳細はWeaponが持つ。攻撃パターンはPlayerやEnemyが持つ
+    //全ての攻撃パターンを持つ。パターンとはWeaponの生成と、Weaponからの情報の受け取りである
+    //PlayerやEnemyの指示でパターンを発動する
 
     public string WeaponTypeDetail;
     public GameObject WeaponPrefab;
- 
-    public void EquipWeapon(string TypeDetail)
+    public GameObject Canvas;
+    private IEnumerator Routine;
+
+    private void SetCanvas()
     {
-        SetWeaponTypeDetail(TypeDetail);       
+        Canvas = GameObject.Find("CanvasMain");
+    }
+        public void EquipWeapon(string TypeDetail)
+    {
+        SetWeaponTypeDetail(TypeDetail);
         LoadWeaponPrefab();
     }
-    public void InstantiateWeapon(GameObject WeaponPrefab)
+    public void SetWeaponTypeDetail(string TypeDetail)
     {
-        GameObject Weapon = Instantiate(WeaponPrefab, transform.position, Quaternion.identity);
-        Weapon.transform.SetParent(gameObject.transform);
-        Vector3 WeaponPosition = new Vector3(0, 0, 0);
-
-        if (Weapon.GetComponent<ControllerWeapon>() == null& gameObject.GetComponent<ControllerCharaGeneral>())
-        {
-            Debug.Log("WeaponのPrefabにControllerWeaponがアタッチされていない。または攻撃者にControllerCharaGeneralがアタッチされていない");
-        }
-        else
-        {
-            string AttackDirection = gameObject.GetComponent<ControllerCharaGeneral>().GetDirection();
-            Weapon.GetComponent<ControllerWeapon>().Direction = AttackDirection;
-            Weapon.GetComponent<ControllerWeapon>().SetTypeDetail(WeaponTypeDetail);
-            if (AttackDirection == "Left") { WeaponPosition = new Vector3(-40, 0, 0); }
-            else if (AttackDirection == "Right") { WeaponPosition = new Vector3(40, 0, 0); }
-            else if (AttackDirection == "Up") { WeaponPosition = new Vector3(0, 80, 0); }
-            else if (AttackDirection == "Down") { WeaponPosition = new Vector3(0, -80, 0); }
-        }
-
-        if (Weapon.GetComponent<RectTransform>() == null)
-        {
-            Debug.Log("WeaponのPrefabにRectTransformがアタッチされていない");
-        }
-        else
-        {
-            Weapon.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-            Weapon.GetComponent<RectTransform>().localPosition = WeaponPosition;
-        }
-
+        WeaponTypeDetail = TypeDetail;
+    }
+    public string GetWeaponTypeDetail()
+    {
+        return WeaponTypeDetail;
     }
     public void LoadWeaponPrefab()
     {
         if (WeaponTypeDetail == "None")
-        { Debug.Log("SeaponTypeがNone");
+        {
+            Debug.Log("WeaponTypeがNone");
             WeaponPrefab = null;
         }
         else if ((GameObject)Resources.Load("prefab/" + WeaponTypeDetail) == null)
-        { Debug.Log("SeaponTypeがLoadできない"); }
+        { Debug.Log("WeaponTypeがLoadできない"); }
         else
         {
             WeaponPrefab = (GameObject)Resources.Load("prefab/" + WeaponTypeDetail);
@@ -66,21 +49,62 @@ public class ControllerAttack : MonoBehaviour
         return WeaponPrefab;
     }
 
+   
 
+    public void AttackSimpleMake ()//進行方向にWeaponを出現させるだけの攻撃
+    {
+        MakeWeapon();
+    }
     public void MakeWeapon()
     {
-        if (WeaponPrefab!=null) { 
+        if (WeaponPrefab != null)
+        {
             InstantiateWeapon(WeaponPrefab);
         }
     }
+   
+    private void InstantiateWeapon(GameObject WeaponPrefab)
+    {
+        GameObject Weapon = Instantiate(WeaponPrefab, transform.position, Quaternion.identity);
+        InitWeapon(Weapon);
+    }
 
-    public void SetWeaponTypeDetail(string TypeDetail)
+    private void InitWeapon(GameObject Weapon)
     {
-        WeaponTypeDetail = TypeDetail;
+        string AttackDirection = gameObject.GetComponent<ControllerCharaGeneral>().GetDirection();
+        Weapon.GetComponent<ControllerWeapon>().Direction = AttackDirection;
+        Weapon.GetComponent<ControllerWeapon>().SetTypeDetail(WeaponTypeDetail);
+        Weapon.GetComponent<ControllerWeapon>().SetBoss(gameObject);
+        SetWeaponStructurallyParent(Weapon);
+        SetWeaponPosition(Weapon);
+        SetWeaponScale(Weapon);
+
     }
-    public string GetWeaponTypeDetail()
+
+    private void SetWeaponStructurallyParent(GameObject Weapon)
     {
-        return WeaponTypeDetail;
+        if (Weapon.GetComponent<ControllerWeapon>().WeaponType == "Gun") {
+            Weapon.transform.SetParent(Canvas.transform);
+        }
+        else {
+            Weapon.transform.SetParent(gameObject.transform);
+        }
     }
+    private void SetWeaponScale(GameObject Weapon)
+    {
+        Weapon.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+    }
+    private void SetWeaponPosition(GameObject Weapon)
+    {
+        Vector3 WeaponPosition=Weapon.GetComponent<ControllerWeapon>().GetWeaponPosition();
+       Weapon.GetComponent<ControllerCharaGeneral>().SetPosition(WeaponPosition);
+
+    }
+
+    private void Start()
+    {
+        SetCanvas();
+    }
+
 
 }

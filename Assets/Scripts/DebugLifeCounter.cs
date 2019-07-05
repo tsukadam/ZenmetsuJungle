@@ -6,18 +6,28 @@ using UnityEngine.UI;
 public class DebugLifeCounter : MonoBehaviour
 {
 
-    ControllerEnemy ThisParent;
+    GameObject ThisParent;
     
         
         // Start is called before the first frame update
     void Start()
     {
-ThisParent=gameObject.transform.parent.gameObject.GetComponent<ControllerEnemy>();
+            ThisParent = gameObject.transform.parent.gameObject;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = ThisParent.HitPoint.ToString();
+        if (ThisParent.GetComponent<ControllerPlayer>())
+        {
+            this.GetComponent<Text>().text = ThisParent.GetComponent<ControllerPlayer>().HitPoint.ToString();
+
+        }
+        else if (ThisParent.GetComponent<ControllerEnemy>())
+        {
+            this.GetComponent<Text>().text = ThisParent.GetComponent<ControllerEnemy>().HitPoint.ToString();
+
+        }
     }
 }

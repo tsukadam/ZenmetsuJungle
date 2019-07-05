@@ -16,15 +16,15 @@ public class ControllerCharaGeneral : MonoBehaviour
     public string StateTrigger = "Exit";
     public string StateDirection = "Down";
 
-    public float CollisionKnockBackAmount = 1f;
-    public float DamagedKnockBackAmount = 100f;
+    private float CollisionKnockBackAmount = 10f;
+    public float DamagedKnockBackAmount = 1000f;
 
     public Collider2D ObjectTriggerNow;
 
 
     public void MyDestroy()
     {
-        DestroyImmediate(gameObject);
+            DestroyImmediate(gameObject);
     }
 
     public void SetCharaType(string Type)
@@ -90,6 +90,13 @@ public class ControllerCharaGeneral : MonoBehaviour
         Rigidbody2D Rb = this.GetComponent<Rigidbody2D>();
         Rb.AddForce(DirectionAmountToVector(Direction,Amount), ForceMode2D.Impulse);
     }
+    public void AddForce(Vector3 Direction)
+    {
+        CheckRigidBody();
+        Rigidbody2D Rb = this.GetComponent<Rigidbody2D>();
+        Rb.AddForce(Direction, ForceMode2D.Impulse);
+    }
+
     public Vector3 DirectionAmountToVector(string Direction,float Amount)
     {
         Vector3 ResultVector=new Vector3(0,0,0);

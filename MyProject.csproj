@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Plugins\Pixelplacement\iTween\iTween.cs" />
     <Compile Include="Assets\Scripts\ControllerAttack.cs" />
     <Compile Include="Assets\Scripts\ControllerCharaGeneral.cs" />
     <Compile Include="Assets\Scripts\ControllerEnemy.cs" />

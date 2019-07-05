@@ -9,19 +9,15 @@ public class ControllerPlayer : MonoBehaviour
 
     private IEnumerator Routine;
 
-    public float MoveAmountOneKey=10f;
+    public int HitPoint;
+    private float MoveAmountOneKey = 3f;
     private ControllerCharaGeneral ThisCharaGeneral;
     private ControllerAttack ThisAttack;
 
-
-
-    private void SetPlayerWeapon(string WeaponType)
-    {
-        ThisAttack.EquipWeapon(WeaponType);
-    }
-    private void MakePlayerWeapon()
-    {
-        ThisAttack.MakeWeapon();
+    public void AddHitPoint(int Amount){
+        HitPoint += Amount;
+        float KnockBackAmount = ThisCharaGeneral.DamagedKnockBackAmount;
+        ThisCharaGeneral.DamagedKnockBack(KnockBackAmount);
     }
 
     private void CheckKey()
@@ -50,17 +46,17 @@ public class ControllerPlayer : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                MakePlayerWeapon();
+                ThisAttack.AttackSimpleMake();
             }
             if (Input.GetKeyDown(KeyCode.X))
             {
                 if (ThisAttack.GetWeaponTypeDetail() != "GunBullet")
                 {
-                    SetPlayerWeapon("GunBullet");
+                    ThisAttack.EquipWeapon("GunBullet");
                 }
                 else
                 {
-                    SetPlayerWeapon("RodSword");
+                    ThisAttack.EquipWeapon("RodSword");
                 }
             }
 
@@ -69,6 +65,7 @@ public class ControllerPlayer : MonoBehaviour
     }
     private void AddInfoToCharaGeneralAsPlayer()
     {
+        HitPoint = 10;
         ThisCharaGeneral.SetCharaType("Player");
         ThisCharaGeneral.SetSwitchCollisionKnockBack(1);
         ThisCharaGeneral.SetSwitchDamagedKnockBack(1);
