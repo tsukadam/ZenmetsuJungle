@@ -143,6 +143,7 @@ MonoBehaviour:
   MoveAmount: 0
   ExistTime: 2
   DamageAmount: 5
+  KnockBackAmount: 50
   Boss: {fileID: 0}
   Team: 
 --- !u!114 &6985031029192735386

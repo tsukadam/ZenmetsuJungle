@@ -14,11 +14,18 @@ public class ControllerEnemy : MonoBehaviour
     public string EnemyType;
 
     private float MoveAmountOneKey = 3f;
+    private float MoveDiagonal = 7f / 10;
     private ControllerCharaGeneral ThisCharaGeneral;
     private ControllerAttack ThisAttack;
     public GameObject Target;
     private IEnumerator Routine;
 
+    private void AttackHold()//捕獲    
+    {
+        ThisAttack.EquipWeapon("Hold");
+        ThisAttack.AttackSimpleMake();
+
+    }
     private void AttackSearchRush()//サーチ＋体当たり
     {
         ThisAttack.EquipWeapon("Search");
@@ -63,37 +70,64 @@ public class ControllerEnemy : MonoBehaviour
         return Target;
     }
 
+    public void TryDamageHitPoint(GameObject Weapon)//将来的に、防御などはここで挟み込む
+    {
+        int DamageAmount = Weapon.GetComponent<ControllerWeapon>().DamageAmount;
+        AddHitPoint(DamageAmount * -1);
+        float KnockBackAmount = Weapon.GetComponent<ControllerWeapon>().KnockBackAmount;
+        string KnockBackDirection = Weapon.GetComponent<ControllerWeapon>().Direction;
+        ThisCharaGeneral.DamagedKnockBack(KnockBackAmount, KnockBackDirection);
+
+    }
 
     public void AddHitPoint(int Amount)
     {
         HitPoint += Amount;
-        float KnockBackAmount = ThisCharaGeneral.DamagedKnockBackAmount;
-        ThisCharaGeneral.DamagedKnockBack(KnockBackAmount);
     }
 
     private void CheckKey()
     {
         if (ThisCharaGeneral != null)
         {
-            if (Input.GetKey(KeyCode.Keypad4))
+             if (Input.GetKey(KeyCode.Keypad4)& Input.GetKey(KeyCode.Keypad8))
             {
-                ThisCharaGeneral.AddPosition("X", MoveAmountOneKey * -1);
-                ThisCharaGeneral.AddDirection("X", MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddPosition(MoveAmountOneKey * MoveDiagonal*-1, MoveAmountOneKey* MoveDiagonal);
+                ThisCharaGeneral.AddDirection(MoveAmountOneKey * MoveDiagonal*-1, MoveAmountOneKey* MoveDiagonal);
             }
-            if (Input.GetKey(KeyCode.Keypad6))
+            else if (Input.GetKey(KeyCode.Keypad6) & Input.GetKey(KeyCode.Keypad8))
             {
-                ThisCharaGeneral.AddPosition("X", MoveAmountOneKey);
-                ThisCharaGeneral.AddDirection("X", MoveAmountOneKey);
+                ThisCharaGeneral.AddPosition(MoveAmountOneKey* MoveDiagonal, MoveAmountOneKey* MoveDiagonal);
+                ThisCharaGeneral.AddDirection(MoveAmountOneKey* MoveDiagonal, MoveAmountOneKey* MoveDiagonal);
             }
-            if (Input.GetKey(KeyCode.Keypad8))
+            else if (Input.GetKey(KeyCode.Keypad4) & Input.GetKey(KeyCode.Keypad2))
             {
-                ThisCharaGeneral.AddPosition("Y", MoveAmountOneKey);
-                ThisCharaGeneral.AddDirection("Y", MoveAmountOneKey);
+                ThisCharaGeneral.AddPosition(MoveAmountOneKey * MoveDiagonal * -1, MoveAmountOneKey* MoveDiagonal *- 1);
+                ThisCharaGeneral.AddDirection(MoveAmountOneKey * MoveDiagonal * -1, MoveAmountOneKey* MoveDiagonal * -1);
             }
-            if (Input.GetKey(KeyCode.Keypad2))
+            else if (Input.GetKey(KeyCode.Keypad6) & Input.GetKey(KeyCode.Keypad2))
             {
-                ThisCharaGeneral.AddPosition("Y", MoveAmountOneKey * -1);
-                ThisCharaGeneral.AddDirection("Y", MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddPosition(MoveAmountOneKey* MoveDiagonal, MoveAmountOneKey * MoveDiagonal * -1);
+                ThisCharaGeneral.AddDirection(MoveAmountOneKey* MoveDiagonal, MoveAmountOneKey * MoveDiagonal * -1);
+            }
+            else if (Input.GetKey(KeyCode.Keypad4))
+            {
+                ThisCharaGeneral.AddPosition(MoveAmountOneKey * -1,0);
+                ThisCharaGeneral.AddDirection(MoveAmountOneKey * -1,0);
+            }
+            else if (Input.GetKey(KeyCode.Keypad6))
+            {
+                ThisCharaGeneral.AddPosition(MoveAmountOneKey,0);
+                ThisCharaGeneral.AddDirection(MoveAmountOneKey,0);
+            }
+            else if (Input.GetKey(KeyCode.Keypad8))
+            {
+                ThisCharaGeneral.AddPosition(0,MoveAmountOneKey);
+                ThisCharaGeneral.AddDirection(0,MoveAmountOneKey);
+            }
+            else if (Input.GetKey(KeyCode.Keypad2))
+            {
+                ThisCharaGeneral.AddPosition(0, MoveAmountOneKey * -1);
+                ThisCharaGeneral.AddDirection(0, MoveAmountOneKey * -1);
             }
 
             if (Input.GetKeyDown(KeyCode.A))
@@ -102,7 +136,8 @@ public class ControllerEnemy : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-               
+                AttackHold();
+
             }
 
         }

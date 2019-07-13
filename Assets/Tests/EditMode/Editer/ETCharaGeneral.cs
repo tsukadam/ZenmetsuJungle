@@ -26,30 +26,25 @@ namespace Tests
             Assert.IsTrue(NewPosition == GetPosition);
         }
 
-        [TestCase("X",10f)]
-        [TestCase("X", -10f)]
-        [TestCase("Y", 10f)]
-        [TestCase("Y", -10f)]
-        public void TestAddPosition(string Dimention,float MoveAmount)
+        [TestCase(10f,0)]
+        [TestCase(-10f,0)]
+        [TestCase(0, 10f)]
+        [TestCase(0, -10f)]
+        public void TestAddPosition(float MoveAmountX, float MoveAmountY)
         {
             Vector3 Position1 = Player.GetComponent<ControllerCharaGeneral>().GetPosition();
             var X1 = Position1.x;
             var Y1 = Position1.y;
 
-                Player.GetComponent<ControllerCharaGeneral>().AddPosition(Dimention,MoveAmount);
+                Player.GetComponent<ControllerCharaGeneral>().AddPosition(MoveAmountX,MoveAmountY);
 
             Vector3 Position2 = Player.GetComponent<ControllerCharaGeneral>().GetPosition();
             var X2 = Position2.x;
             var Y2 = Position2.y;
-
-            if (Dimention == "X")
-            {
-                Assert.IsTrue(X2 == X1+MoveAmount);
-            }
-            if (Dimention == "Y")
-            {
-                Assert.IsTrue(Y2 == Y1+MoveAmount);
-            }
+   
+                Assert.IsTrue(X2 == X1+MoveAmountX);
+                Assert.IsTrue(Y2 == Y1+MoveAmountY);
+ 
         }
         [Test]
         public void TestSetGetCollision()
@@ -70,13 +65,13 @@ namespace Tests
         [Test]
         public void TestCollision()
         {
-            Player.GetComponent<ControllerCharaGeneral>().AddPosition("Y",-480f);
+            Player.GetComponent<ControllerCharaGeneral>().AddPosition(0,-480f);
             Assert.IsTrue(Player.GetComponent<ControllerCharaGeneral>().GetCollision() != "Exit");
                 }
         [Test]
         public void TestTrigger()
         {
-            Player.GetComponent<ControllerCharaGeneral>().AddPosition("Y", -480f);
+            Player.GetComponent<ControllerCharaGeneral>().AddPosition(0, -480f);
             Assert.IsTrue(Player.GetComponent<ControllerCharaGeneral>().GetTrigger() != "Exit");
         }
         [Test]
@@ -100,35 +95,59 @@ namespace Tests
         public void TestAddDirection()
         {
             string StateCollision;
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("X",-1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(-1f,0);
             StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
             Assert.IsTrue(StateCollision == "Left");
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("X", 1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(1f,0);
             StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
             Assert.IsTrue(StateCollision == "Right");
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("Y", -1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(0, -1f);
             StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
             Assert.IsTrue(StateCollision == "Down");
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("Y", 1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(0, 1f);
             StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
             Assert.IsTrue(StateCollision == "Up");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(-1f, -1f);
+            StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
+            Assert.IsTrue(StateCollision == "LeftDown");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(-1f, 1f);
+            StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
+            Assert.IsTrue(StateCollision == "LeftUp");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(1f, 1f);
+            StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
+            Assert.IsTrue(StateCollision == "RightUp");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(1f, -1f);
+            StateCollision = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
+            Assert.IsTrue(StateCollision == "RightDown");
         }
         [Test]
         public void TestGetAntiDirection()
         {
             string StateAnti;
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("X", -1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(-1f,0);
             StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
             Assert.IsTrue(StateAnti == "Right");
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("X", 1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(1f,0);
             StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
             Assert.IsTrue(StateAnti == "Left");
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("Y", 1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(0, 1f);
             StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
             Assert.IsTrue(StateAnti == "Down");
-            Player.GetComponent<ControllerCharaGeneral>().AddDirection("Y", -1f);
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(0, -1f);
             StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
             Assert.IsTrue(StateAnti == "Up");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(-1f, -1f);
+            StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
+            Assert.IsTrue(StateAnti == "RightUp");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(-1f, 1f);
+            StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
+            Assert.IsTrue(StateAnti == "RightDown");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(1f, 1f);
+            StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
+            Assert.IsTrue(StateAnti == "LeftDown");
+            Player.GetComponent<ControllerCharaGeneral>().AddDirection(1f, -1f);
+            StateAnti = Player.GetComponent<ControllerCharaGeneral>().GetAntiDirection();
+            Assert.IsTrue(StateAnti == "LeftUp");
 
         }
         [Test]

@@ -67,7 +67,7 @@
     <Compile Include="Assets\Scripts\ControllerKey.cs" />
     <Compile Include="Assets\Scripts\ControllerPlayer.cs" />
     <Compile Include="Assets\Scripts\ControllerWeapon.cs" />
-    <Compile Include="Assets\Scripts\DebugLifeCounter.cs" />
+    <Compile Include="Assets\Scripts\DebugStatusInfo.cs" />
     <Compile Include="Assets\Scripts\MyClass.cs" />
     <Compile Include="Assets\Scripts\StateKey.cs" />
     <Reference Include="UnityEngine.AIModule">

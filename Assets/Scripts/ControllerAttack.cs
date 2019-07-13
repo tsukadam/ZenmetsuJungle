@@ -57,8 +57,10 @@ public class ControllerAttack : MonoBehaviour
     }
     public void MakeWeapon()
     {
+
         if (WeaponPrefab != null)
         {
+
             InstantiateWeapon(WeaponPrefab);
         }
     }

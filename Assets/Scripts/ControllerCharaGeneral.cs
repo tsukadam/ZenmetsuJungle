@@ -16,10 +16,22 @@ public class ControllerCharaGeneral : MonoBehaviour
     public string StateTrigger = "Exit";
     public string StateDirection = "Down";
 
-    private float CollisionKnockBackAmount = 10f;
+    private float CollisionKnockBackAmount = 50f;
     public float DamagedKnockBackAmount = 1000f;
 
     public Collider2D ObjectTriggerNow;
+
+
+    public void OnStun()
+    {
+    SwitchDamagedKnockBack = 0;
+    SwitchCollisionKnockBack = 0;
+}
+    public void OffStun()
+    {
+        SwitchDamagedKnockBack = 1;
+        SwitchCollisionKnockBack = 1;
+    }
 
 
     public void MyDestroy()
@@ -63,16 +75,37 @@ public class ControllerCharaGeneral : MonoBehaviour
         else if (StateDirection == "Right") { Result = "Left"; }
         else if (StateDirection == "Up") { Result = "Down"; }
         else if (StateDirection == "Down") { Result = "Up"; }
+        else if (StateDirection == "LeftDown") { Result = "RightUp"; }
+        else if (StateDirection == "LeftUp") { Result = "RightDown"; }
+        else if (StateDirection == "RightDown") { Result = "LeftUp"; }
+        else if (StateDirection == "RightUp") { Result = "LeftDown"; }
         else { Debug.Log("Directionが変になっている"); }
 
         return Result;
     }
-    public void DamagedKnockBack(float Amount)
+
+    public string GetAntiDirection(string Direction)
+    {
+        string Result = "";
+        if (Direction == "Left") { Result = "Right"; }
+        else if (Direction == "Right") { Result = "Left"; }
+        else if (Direction == "Up") { Result = "Down"; }
+        else if (Direction == "Down") { Result = "Up"; }
+        else if (Direction == "LeftDown") { Result = "RightUp"; }
+        else if (Direction == "LeftUp") { Result = "RightDown"; }
+        else if (Direction == "RightDown") { Result = "LeftUp"; }
+        else if (Direction == "RightUp") { Result = "LeftDown"; }
+        else { Debug.Log("Directionが変になっている"); }
+
+        return Result;
+    }
+
+    public void DamagedKnockBack(float Amount,string FromDirection)
     {
         if (SwitchDamagedKnockBack != 0)
         {
-            string AntiDirection = GetAntiDirection();
-            AddForce(AntiDirection, Amount);
+           
+            AddForceTween(FromDirection, Amount);
         }
     }
     public void CollisionKnockBack()
@@ -84,7 +117,73 @@ public class ControllerCharaGeneral : MonoBehaviour
         }
     }
 
-    public void AddForce(string Direction, float Amount)
+    public Vector3 GetVectorFromDirectionAndAmount(string Direction,float MoveAmount) {
+        Vector3 Result;
+        float X=0;
+        float Y=0;
+        float MoveDiagonal = 0.7f;
+
+        if (Direction == "Left")
+        {
+            X = MoveAmount * -1f;
+            Y = 0;
+        }
+        else if (Direction == "Right")
+        {
+            X = MoveAmount*1f;
+            Y = 0;
+        }
+        else if (Direction == "Up")
+        {
+            Y = MoveAmount*1f;
+            X = 0;
+        }
+        else if (Direction == "Down")
+        {
+            Y = MoveAmount * -1f;
+            X = 0;
+        }
+        else if (Direction == "LeftUp")
+        {
+            X = MoveAmount * MoveDiagonal * -1f;
+            Y = MoveAmount * MoveDiagonal*1f;
+        }
+        else if (Direction == "RightUp")
+        {
+            X = MoveAmount * MoveDiagonal*1f;
+            Y = MoveAmount * MoveDiagonal*1f;
+        }
+        else if (Direction == "LeftDown")
+        {
+            X = MoveAmount * MoveDiagonal * -1f;
+            Y = MoveAmount * MoveDiagonal * -1f;
+        }
+        else if (Direction == "RightDown")
+        {
+            X = MoveAmount * MoveDiagonal*1f;
+            Y = MoveAmount * MoveDiagonal * -1f;
+        }
+        Result = new Vector3(X, Y, 0);
+        return Result;
+    }
+
+    public void AddForceTween(string Direction, float Amount)
+    {
+        float X=0;
+        float Y=0;
+        Vector3 MoveVector=GetVectorFromDirectionAndAmount(Direction,Amount);
+        X = MoveVector.x;
+        Y = MoveVector.y;
+       
+        iTween.MoveBy(gameObject, iTween.Hash(
+                     "x", X,
+                     "y", Y,
+                     "time", 0.2f,
+                     "easeType", "easeOutCubic",
+                     "isLocal", true
+                 ));
+    }
+        public void AddForce(string Direction, float Amount)
     {
         CheckRigidBody();
         Rigidbody2D Rb = this.GetComponent<Rigidbody2D>();
@@ -104,6 +203,10 @@ public class ControllerCharaGeneral : MonoBehaviour
         else if (Direction == "Right") { ResultVector = new Vector3(Amount, 0, 0); }
         else if (Direction == "Up") { ResultVector = new Vector3(0,Amount, 0); }
         else if (Direction == "Down") { ResultVector = new Vector3(0, Amount*-1f, 0); }
+        else if (Direction == "LeftUp") { ResultVector = new Vector3(Amount*-1f, Amount, 0); }
+        else if (Direction == "LeftDown") { ResultVector = new Vector3(Amount*-1f, Amount*-1f, 0); }
+        else if (Direction == "RightUp") { ResultVector = new Vector3(Amount, Amount, 0); }
+        else if (Direction == "RightDown") { ResultVector = new Vector3(Amount, Amount * -1f, 0); }
         else { Debug.Log("Directionの引数間違い"); }
 
         return ResultVector;
@@ -199,37 +302,39 @@ public class ControllerCharaGeneral : MonoBehaviour
         gameObject.GetComponent<RectTransform>().localPosition=NewPosition;
         
     }
-    public void AddPosition(string Dimention,float MoveAmount)
+    public void AddPosition(float MoveAmountX, float MoveAmountY)
     {
         Vector3 AddingPosition = GetPosition();
 
-        if (Dimention == "X")
-        {
-            AddingPosition.x += MoveAmount;
-        }
-        else if (Dimention == "Y")
-        {
-            AddingPosition.y += MoveAmount;
-        }
-        else { Debug.Log("Dimentionの引数間違い"); }
+            AddingPosition.x += MoveAmountX;
+            AddingPosition.y += MoveAmountY;
 
         SetPosition(AddingPosition);
     }
 
-    public void AddDirection(string Dimention, float MoveAmount)
+    public void AddDirection(float MoveAmountX, float MoveAmountY)
     {
         string State = GetDirection();
-        if (Dimention == "X")
+        if (MoveAmountX != 0& MoveAmountY == 0)
         {
-            if (MoveAmount > 0) { State = "Right"; }
-            else if(MoveAmount<0){ State = "Left"; }
+            if (MoveAmountX > 0) { State = "Right"; }
+            else if(MoveAmountX<0){ State = "Left"; }
         }
-        else if (Dimention == "Y")
+        else if (MoveAmountX == 0 & MoveAmountY != 0)
         {
-            if (MoveAmount > 0) { State = "Up"; }
-            else if (MoveAmount < 0) { State = "Down"; }
+            if (MoveAmountY > 0) { State = "Up"; }
+            else if (MoveAmountY < 0) { State = "Down"; }
 
         }
+        else if (MoveAmountX != 0 & MoveAmountY != 0)
+        {
+            if (MoveAmountY > 0&MoveAmountX>0) { State = "RightUp"; }
+            else if (MoveAmountY > 0 & MoveAmountX < 0) { State = "LeftUp"; }
+            else if (MoveAmountY < 0 & MoveAmountX > 0) { State = "RightDown"; }
+            else if (MoveAmountY < 0 & MoveAmountX < 0) { State = "LeftDown"; }
+
+        }
+
         else { Debug.Log("Dimentionの引数間違い"); }
         SetDirection(State);
 

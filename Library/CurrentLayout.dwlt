@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 324}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 0
     width: 407
     height: 1067
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -71,7 +71,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1117
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 324}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1067
-  m_MinSize: {x: 787, y: 224}
-  m_MaxSize: {x: 16012, y: 4024}
+  m_MinSize: {x: 913, y: 274}
+  m_MaxSize: {x: 22008, y: 10024}
   vertical: 0
-  controlID: 59
+  controlID: 90
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 1067
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -190,13 +190,13 @@ MonoBehaviour:
     height: 1067
   m_MinSize: {x: 204, y: 224}
   m_MaxSize: {x: 4004, y: 4024}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,17 +216,17 @@ MonoBehaviour:
     y: 0
     width: 403
     height: 1067
-  m_MinSize: {x: 104, y: 124}
-  m_MaxSize: {x: 4004, y: 4024}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 234, y: 274}
+  m_MaxSize: {x: 10004, y: 10024}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 10}
   - {fileID: 11}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 2
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,9 +247,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 993
+    x: 1110
     y: 73
-    width: 516
+    width: 399
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -387,9 +387,9 @@ MonoBehaviour:
     - id: '[ZenmetsuJungle][suite]'
       name: ZenmetsuJungle
       fullName: ZenmetsuJungle
-      resultStatus: 1
-      duration: 0.2975302
-      messages: 
+      resultStatus: 2
+      duration: 0.0570088
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -401,9 +401,9 @@ MonoBehaviour:
     - id: '[C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/EditMode.dll][suite]'
       name: EditMode.dll
       fullName: C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/EditMode.dll
-      resultStatus: 1
-      duration: 0.2271081
-      messages: 
+      resultStatus: 2
+      duration: 0.035515
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -415,9 +415,9 @@ MonoBehaviour:
     - id: '[Tests][suite]'
       name: Tests
       fullName: Tests
-      resultStatus: 1
-      duration: 0.189626
-      messages: 
+      resultStatus: 2
+      duration: 0.0232311
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -429,9 +429,9 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack][suite]'
       name: ETAttack
       fullName: Tests.ETAttack
-      resultStatus: 1
-      duration: 0.0691735
-      messages: 
+      resultStatus: 2
+      duration: 0.0866082
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
       name: TestEquipWeapon
       fullName: Tests.ETAttack.TestEquipWeapon
       resultStatus: 1
-      duration: 0.011381
+      duration: 0.0097666
       messages: 
       output: 
       stacktrace: 
@@ -458,9 +458,9 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack.TestMakeWeapon][suite]'
       name: TestMakeWeapon
       fullName: Tests.ETAttack.TestMakeWeapon
-      resultStatus: 1
-      duration: 0.0347211
-      messages: 
+      resultStatus: 2
+      duration: 0.0494613
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -472,11 +472,28 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("GunBullet")]'
       name: TestMakeWeapon("GunBullet")
       fullName: Tests.ETAttack.TestMakeWeapon("GunBullet")
-      resultStatus: 1
-      duration: 0.0022682
-      messages: 
+      resultStatus: 2
+      duration: 0.0060193
+      messages: 'UnityEngine.UnassignedReferenceException : The variable Canvas of
+        ControllerAttack has not been assigned.
+
+        You probably need to assign the Canvas variable of the ControllerAttack script
+        in the inspector.'
       output: 
-      stacktrace: 
+      stacktrace: "  at (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
+        \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject
+        Weapon) [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
+        \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
+        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
+        \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
+        [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
+        \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
+        \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00024]
+        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:43
+        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -488,9 +505,9 @@ MonoBehaviour:
       name: TestMakeWeapon("None")
       fullName: Tests.ETAttack.TestMakeWeapon("None")
       resultStatus: 1
-      duration: 0.0053702
+      duration: 0.0053953
       messages: 
-      output: "SeaponType\u304CNone\r\n"
+      output: "WeaponType\u304CNone\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -503,9 +520,9 @@ MonoBehaviour:
       name: TestMakeWeapon("hoge")
       fullName: Tests.ETAttack.TestMakeWeapon("hoge")
       resultStatus: 1
-      duration: 0.0015575
+      duration: 0.0017814
       messages: 
-      output: "SeaponType\u304CLoad\u3067\u304D\u306A\u3044\r\n"
+      output: "WeaponType\u304CLoad\u3067\u304D\u306A\u3044\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -518,7 +535,7 @@ MonoBehaviour:
       name: TestSetGetWeaponType
       fullName: Tests.ETAttack.TestSetGetWeaponType
       resultStatus: 1
-      duration: 0.0002516
+      duration: 0.0002607
       messages: 
       output: 
       stacktrace: 
@@ -533,7 +550,7 @@ MonoBehaviour:
       name: ETCharaGeneral
       fullName: Tests.ETCharaGeneral
       resultStatus: 1
-      duration: 0.0306288
+      duration: 0.0312656
       messages: 
       output: 
       stacktrace: 
@@ -547,7 +564,7 @@ MonoBehaviour:
       name: TestAddDirection
       fullName: Tests.ETCharaGeneral.TestAddDirection
       resultStatus: 1
-      duration: 0.0005419
+      duration: 0.0005266
       messages: 
       output: 
       stacktrace: 
@@ -562,7 +579,7 @@ MonoBehaviour:
       name: TestAddPosition
       fullName: Tests.ETCharaGeneral.TestAddPosition
       resultStatus: 1
-      duration: 0.0067362
+      duration: 0.0070786
       messages: 
       output: 
       stacktrace: 
@@ -572,11 +589,11 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[EditMode][Tests.ETCharaGeneral][suite]'
-    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("X",10.0f)]'
-      name: TestAddPosition("X",10.0f)
-      fullName: Tests.ETCharaGeneral.TestAddPosition("X",10.0f)
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition(10.0f,0)]'
+      name: TestAddPosition(10.0f,0)
+      fullName: Tests.ETCharaGeneral.TestAddPosition(10.0f,0)
       resultStatus: 1
-      duration: 0.0008818
+      duration: 0.0005229
       messages: 
       output: 
       stacktrace: 
@@ -587,11 +604,11 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("X",-10.0f)]'
-      name: TestAddPosition("X",-10.0f)
-      fullName: Tests.ETCharaGeneral.TestAddPosition("X",-10.0f)
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition(-10.0f,0)]'
+      name: TestAddPosition(-10.0f,0)
+      fullName: Tests.ETCharaGeneral.TestAddPosition(-10.0f,0)
       resultStatus: 1
-      duration: 0.00019
+      duration: 0.000198
       messages: 
       output: 
       stacktrace: 
@@ -602,11 +619,11 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("Y",10.0f)]'
-      name: TestAddPosition("Y",10.0f)
-      fullName: Tests.ETCharaGeneral.TestAddPosition("Y",10.0f)
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition(0,10.0f)]'
+      name: TestAddPosition(0,10.0f)
+      fullName: Tests.ETCharaGeneral.TestAddPosition(0,10.0f)
       resultStatus: 1
-      duration: 0.0001824
+      duration: 0.0001944
       messages: 
       output: 
       stacktrace: 
@@ -617,11 +634,11 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.ETCharaGeneral.TestAddPosition][suite]'
-    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition("Y",-10.0f)]'
-      name: TestAddPosition("Y",-10.0f)
-      fullName: Tests.ETCharaGeneral.TestAddPosition("Y",-10.0f)
+    - id: '[EditMode][Tests.ETCharaGeneral.TestAddPosition(0,-10.0f)]'
+      name: TestAddPosition(0,-10.0f)
+      fullName: Tests.ETCharaGeneral.TestAddPosition(0,-10.0f)
       resultStatus: 1
-      duration: 0.0001794
+      duration: 0.0001882
       messages: 
       output: 
       stacktrace: 
@@ -636,7 +653,7 @@ MonoBehaviour:
       name: TestCollision
       fullName: Tests.ETCharaGeneral.TestCollision
       resultStatus: 1
-      duration: 0.0003271
+      duration: 0.0003173
       messages: 
       output: 
       stacktrace: 
@@ -651,7 +668,7 @@ MonoBehaviour:
       name: TestGetAntiDirection
       fullName: Tests.ETCharaGeneral.TestGetAntiDirection
       resultStatus: 1
-      duration: 0.0004361
+      duration: 0.0004642
       messages: 
       output: 
       stacktrace: 
@@ -666,7 +683,7 @@ MonoBehaviour:
       name: TestSetGetCharaType
       fullName: Tests.ETCharaGeneral.TestSetGetCharaType
       resultStatus: 1
-      duration: 0.0003333
+      duration: 0.0003421
       messages: 
       output: 
       stacktrace: 
@@ -681,7 +698,7 @@ MonoBehaviour:
       name: TestSetGetCollision
       fullName: Tests.ETCharaGeneral.TestSetGetCollision
       resultStatus: 1
-      duration: 0.0002855
+      duration: 0.0002786
       messages: 
       output: 
       stacktrace: 
@@ -696,7 +713,7 @@ MonoBehaviour:
       name: TestSetGetDirection
       fullName: Tests.ETCharaGeneral.TestSetGetDirection
       resultStatus: 1
-      duration: 0.0003286
+      duration: 0.0003563
       messages: 
       output: 
       stacktrace: 
@@ -711,7 +728,7 @@ MonoBehaviour:
       name: TestSetGetPosition
       fullName: Tests.ETCharaGeneral.TestSetGetPosition
       resultStatus: 1
-      duration: 0.0003023
+      duration: 0.000357
       messages: 
       output: 
       stacktrace: 
@@ -726,7 +743,7 @@ MonoBehaviour:
       name: TestSetGetSwitchCollisionKnockBack
       fullName: Tests.ETCharaGeneral.TestSetGetSwitchCollisionKnockBack
       resultStatus: 1
-      duration: 0.0003308
+      duration: 0.0003118
       messages: 
       output: 
       stacktrace: 
@@ -741,7 +758,7 @@ MonoBehaviour:
       name: TestSetGetSwitchDamagedKnockBack
       fullName: Tests.ETCharaGeneral.TestSetGetSwitchDamagedKnockBack
       resultStatus: 1
-      duration: 0.0003165
+      duration: 0.0002997
       messages: 
       output: 
       stacktrace: 
@@ -756,7 +773,7 @@ MonoBehaviour:
       name: TestSetGetTrigger
       fullName: Tests.ETCharaGeneral.TestSetGetTrigger
       resultStatus: 1
-      duration: 0.0003169
+      duration: 0.0003144
       messages: 
       output: 
       stacktrace: 
@@ -771,7 +788,7 @@ MonoBehaviour:
       name: TestTrigger
       fullName: Tests.ETCharaGeneral.TestTrigger
       resultStatus: 1
-      duration: 0.0002585
+      duration: 0.0002709
       messages: 
       output: 
       stacktrace: 
@@ -786,7 +803,7 @@ MonoBehaviour:
       name: ETEnemy
       fullName: Tests.ETEnemy
       resultStatus: 1
-      duration: 0.0289389
+      duration: 0.0344228
       messages: 
       output: 
       stacktrace: 
@@ -800,7 +817,7 @@ MonoBehaviour:
       name: ETEnemySimplePasses
       fullName: Tests.ETEnemy.ETEnemySimplePasses
       resultStatus: 1
-      duration: 0.0001813
+      duration: 0.0002228
       messages: 
       output: 
       stacktrace: 
@@ -815,7 +832,7 @@ MonoBehaviour:
       name: ETEnemyWithEnumeratorPasses
       fullName: Tests.ETEnemy.ETEnemyWithEnumeratorPasses
       resultStatus: 1
-      duration: 0.0189159
+      duration: 0.0188543
       messages: 
       output: 
       stacktrace: 
@@ -830,7 +847,7 @@ MonoBehaviour:
       name: ETKey
       fullName: Tests.ETKey
       resultStatus: 1
-      duration: 0.0134838
+      duration: 0.014309
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -846,7 +863,7 @@ MonoBehaviour:
       name: CheckInitNumericKey
       fullName: Tests.ETKey.CheckInitNumericKey
       resultStatus: 1
-      duration: 0.0061075
+      duration: 0.0063723
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -862,9 +879,9 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETWeapon][suite]'
       name: ETWeapon
       fullName: Tests.ETWeapon
-      resultStatus: 1
-      duration: 0.0055569
-      messages: 
+      resultStatus: 2
+      duration: 0.013087
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -876,11 +893,27 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETWeapon.TestSetGetTypeDetail]'
       name: TestSetGetTypeDetail
       fullName: Tests.ETWeapon.TestSetGetTypeDetail
-      resultStatus: 1
-      duration: 0.0007626
-      messages: 
+      resultStatus: 2
+      duration: 0.0024407
+      messages: 'UnityEngine.UnassignedReferenceException : The variable Canvas of
+        ControllerAttack has not been assigned.
+
+        You probably need to assign the Canvas variable of the ControllerAttack script
+        in the inspector.'
       output: 
-      stacktrace: 
+      stacktrace: "  at (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
+        \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject
+        Weapon) [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
+        \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
+        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
+        \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
+        [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
+        \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
+        \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00017] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:24
+        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -892,7 +925,7 @@ MonoBehaviour:
       name: NewTestScriptEdit
       fullName: Tests.NewTestScriptEdit
       resultStatus: 1
-      duration: 0.0111914
+      duration: 0.0116936
       messages: 
       output: 
       stacktrace: 
@@ -906,7 +939,7 @@ MonoBehaviour:
       name: MyClassTest1
       fullName: Tests.NewTestScriptEdit.MyClassTest1
       resultStatus: 1
-      duration: 0.0006699
+      duration: 0.0007107
       messages: 
       output: 
       stacktrace: 
@@ -921,7 +954,7 @@ MonoBehaviour:
       name: MyClassTest2
       fullName: Tests.NewTestScriptEdit.MyClassTest2
       resultStatus: 1
-      duration: 0.0002268
+      duration: 0.0002356
       messages: 
       output: 
       stacktrace: 
@@ -932,13 +965,40 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.NewTestScriptEdit][suite]'
-    m_ResultText: TestSetGetTypeDetail (0.001s)
-    m_ResultStacktrace: 
+    m_ResultText: "TestSetGetTypeDetail (0.002s)\n---\nUnityEngine.UnassignedReferenceException
+      : The variable Canvas of ControllerAttack has not been assigned.\nYou probably
+      need to assign the Canvas variable of the ControllerAttack script in the inspector.\n---\nat
+      (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
+      \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject Weapon)
+      [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
+      \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
+      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
+      \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
+      [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
+      \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
+      \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00017] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:24
+      \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+      \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+      culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0"
+    m_ResultStacktrace: "  at (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
+      \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject Weapon)
+      [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
+      \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
+      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
+      \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
+      [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
+      \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
+      \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00017] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:24
+      \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+      \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+      culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
     m_TestListState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 124a3153
       m_LastClickedID: 1395739154
-      m_ExpandedIDs: d5b84f9b30e77fa2e89758a7a50c29023beef20227f1d631fb4f064fc138f052e0cc96563a4f8b60ea2b8c7ba56df77effffff7f
+      m_ExpandedIDs: d5b84f9b30e77fa2e89758a7a50c29023beef20227f1d6313a2ac938e191b649fb4f064fc138f052e0cc96563a4f8b60ea2b8c7ba56df77effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1047,7 +1107,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1108,9 +1168,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ec280000
-      m_LastClickedID: 10476
-      m_ExpandedIDs: d4fbffffae280000c0280000ec2800001e290000
+      m_SelectedIDs: 465c0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 18b6ffff3ab6ffff62b6ffff9cb6fffffad7ffff2cd8ffff50ddffff72ddffff9addffffd2ddffff1edeffff58deffffe0defffff2deffff1adfffff52dfffffa8eeffffc0eeffffe8eeffff10efffff4eefffffd4fbffffc4280000d628000002290000342900001637000052370000063c0000423c000034400000704000001e490000ac490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1157,7 +1217,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 73
-    width: 785
+    width: 902
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 07ff113979cb7c7499f9cb40221fd731
@@ -1166,9 +1226,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 33.234467, y: -13.672195, z: -3.3049903}
+    m_Target: {x: 13.331723, y: -5.4143624, z: 0.54877424}
     speed: 2
-    m_Value: {x: 33.234467, y: -13.672195, z: -3.3049903}
+    m_Value: {x: 13.331723, y: -5.4143624, z: 0.54877424}
   m_RenderMode: 3
   m_CameraMode:
     drawMode: 3
@@ -1200,9 +1260,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1393.8888
+    m_Target: 1009.83813
     speed: 2
-    m_Value: 1393.8888
+    m_Value: 1009.83813
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1261,9 +1321,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 993
+    x: 1110
     y: 73
-    width: 516
+    width: 399
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -1289,9 +1349,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 90270000
-    m_LastClickedID: 10128
-    m_ExpandedIDs: 000000001e260000b2270000262800004a280000643b0000663b0000683b000000ca9a3b
+    m_SelectedIDs: a2270000
+    m_LastClickedID: 10146
+    m_ExpandedIDs: 0000000026260000702600009c270000c4270000162800003a2800005e28000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1319,7 +1379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e260000b2270000262800004a280000
+    m_ExpandedIDs: 0000000026260000702600009c270000c4270000162800003a2800005e280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1344,21 +1404,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3499ffff
-    m_LastClickedInstanceID: -26316
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 02050000220500007a0500000000000040050000e6770000020600009e070000a0050000482d0a001ad002008a24000096220000402e00008627000056270000362700007efc00004c27000096eefeffdcb5feff082c00003c300000542a0000722a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Images
-      m_OriginalName: Images
+      m_Name: DebugStatusInfo
+      m_OriginalName: DebugStatusInfo
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15210
+      m_UserData: 8812
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

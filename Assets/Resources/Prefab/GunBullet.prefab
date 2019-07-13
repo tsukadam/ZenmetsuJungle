@@ -140,11 +140,11 @@ MonoBehaviour:
   WeaponType: Gun
   WeaponTypeDetail: 
   Direction: 
-  MoveAmount: 10
-  ExistTime: 0
+  MoveAmount: 3000
+  ExistTime: 5
   DamageAmount: 1
-  Parent: {fileID: 0}
-  ParentType: 
+  Boss: {fileID: 0}
+  Team: 
 --- !u!114 &2944487184960171586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +163,5 @@ MonoBehaviour:
   StateCollision: Exit
   StateTrigger: Exit
   StateDirection: Down
-  CollisionKnockBackAmount: 1
   DamagedKnockBackAmount: 100
   ObjectTriggerNow: {fileID: 0}
