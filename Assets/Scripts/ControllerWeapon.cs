@@ -14,14 +14,25 @@ public class ControllerWeapon : MonoBehaviour
     public string Direction;
     public float MoveAmount;
     public int ExistTime;//存在時間、0=無限
-    public int DamageAmount;
+    public int HitDamageAmount;
+    public int MentalDamageAmount;
     public int KnockBackAmount;
+    public int Slot;
     private IEnumerator Routine;
     public GameObject Boss;//Weaponを発生させた者
     public string Team;
 
     private ControllerCharaGeneral ThisCharaGeneral;
 
+
+    public void SetSlot(int Num)
+    {
+        Slot = Num;
+    }
+    public int GetSlot()
+    {
+        return Slot;
+    }
 
 
     public void SetTeam()
@@ -42,41 +53,41 @@ public class ControllerWeapon : MonoBehaviour
     }
 
 
-    private void StartRush()
+   
+   
+    private void TriggerBody(GameObject Target)
     {
-        //Enemyクラスが持つTargetObjectの座標に突進する。
-        GameObject SearchedTarget = Boss.GetComponent<ControllerEnemy>().GetTarget();
-        Vector3 TargetPosition = SearchedTarget.GetComponent<ControllerCharaGeneral>().GetPosition();
-        float X = TargetPosition.x;
-        float Y = TargetPosition.y;
-
-        iTween.MoveTo(Boss, iTween.Hash(
-                    "x", X,
-                    "y", Y,
-                    "time", 1f,
-                    "easeType", "easeInOutBack",
-                    "isLocal", true
-                ));
-        Boss.GetComponent<ControllerEnemy>().InitTarget();
-
-    }
-    private void TriggerRush(GameObject Target)
-    {
-        //自分がEnemy、相手がPlayerならば、ダメージを与える。
-        string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
-        if (Team == "Enemy"& TargetType == "Player")
-        {
-            Target.GetComponent<ControllerPlayer>().TryDamageHitPoint(gameObject);
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
-
-    }
-    private void TriggerHold(GameObject Target)
-    {
-        //自分がEnemy、相手がPlayerならば、
+        //自分がEnemy、相手がPlayerならば、接触攻撃する。
         string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
         if (Team == "Enemy" & TargetType == "Player")
         {
+            Boss.GetComponent<ControllerEnemy>().SetTarget(Target);
+            Target.GetComponent<ControllerPlayer>().TryTouch(gameObject);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            BodyEnable();
+        }
+    }
+    public void BodyEnable()
+    {
+        Routine = null;
+        Routine = BodyEnabledCoroutine();
+        StartCoroutine(Routine);
+    }
+    IEnumerator BodyEnabledCoroutine()//bodyの当たり判定は一定時間で回復
+    {
+        yield return new WaitForSeconds(1.0f);
+        Boss.GetComponent<ControllerAttack>().EquipWeapon(1, "Body");
+        Boss.GetComponent<ControllerAttack>().AttackSimpleMake(1);
+        ThisCharaGeneral.MyDestroy();
+    }
+
+        private void TriggerHold(GameObject Target)
+    {
+        //自分がEnemy、相手がPlayerならば、Holdを開始し、自分のEnemyクラスにTargetObjectを送る
+        string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
+        if (Team == "Enemy" & TargetType == "Player")
+        {
+            Boss.GetComponent<ControllerEnemy>().SetTarget(Target);
             Target.GetComponent<ControllerPlayer>().TryHold(gameObject);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -96,15 +107,34 @@ public class ControllerWeapon : MonoBehaviour
         }
     }
 
+    private void TriggerCheck(GameObject Target)
+    {
+        //トリガー接触したら、自分がPlayer、相手がMassageならば、MassageにUIを表示させる
+        string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
+        if (Team == "Player" & TargetType == "Massage")
+        {
+           Target.GetComponent<ControllerMassage>().WriteMassage();
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+        }
+    }
     private void TriggerRod(GameObject Target)
     {
         //自分がPlayer、相手がEnemyならば、ダメージを与える。
          string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
          if (Team == "Player"& TargetType == "Enemy")
          {
-            Target.GetComponent<ControllerEnemy>().TryDamageHitPoint(gameObject);
+            Target.GetComponent<ControllerEnemy>().TryAddDamage(gameObject);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
          }
+        //自分がEnemy、相手がPlayerならば、接触攻撃する。
+        else if (Team == "Enemy" & TargetType == "Player")
+        {
+            Boss.GetComponent<ControllerEnemy>().SetTarget(Target);
+            Target.GetComponent<ControllerPlayer>().TryTouch(gameObject);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            DestroyGun();
+        }
     }
     private void TrrigerGun(GameObject Target)
     //自分がPlayer、相手がEnemyならば、ダメージを与える。
@@ -112,11 +142,17 @@ public class ControllerWeapon : MonoBehaviour
         string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
         if (Team == "Player"& TargetType == "Enemy")
         {
-            Target.GetComponent<ControllerEnemy>().TryDamageHitPoint(gameObject);
+            Target.GetComponent<ControllerEnemy>().TryAddDamage(gameObject);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             DestroyGun();
         }
-        //ウェポン相手は無意味
+        //自分がEnemy、相手がPlayerならば、ダメージを与える。
+        else if (Team == "Enemy" & TargetType == "Player")
+        {
+            Target.GetComponent<ControllerPlayer>().TryAddDamage(gameObject);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            DestroyGun();
+        }
         else if (TargetType == "Weapon")
         {
         }
@@ -147,7 +183,7 @@ public class ControllerWeapon : MonoBehaviour
             Y = 0;
         }
 
-        if (WeaponType == "Rush"| WeaponType == "Hold") { WeaponPosition = new Vector3(X, Y, 0); }
+        if (WeaponType == "Body"| WeaponType == "Shield" | WeaponType == "Search") { WeaponPosition = new Vector3(X, Y, 0); }
         else
         {
             if (AttackDirection == "Left") { WeaponPosition = new Vector3(X - PaddingX, Y, 0); }
@@ -164,11 +200,7 @@ public class ControllerWeapon : MonoBehaviour
 
     private void CheckStartAction()
     {
-                if (WeaponType == "Rush")
-                {
-                    StartRush();
-                }
-        else if (WeaponType == "Gun")
+               if (WeaponType == "Gun")
         {
             MoveGun();
         }
@@ -195,18 +227,21 @@ public class ControllerWeapon : MonoBehaviour
                     {
                         TriggerSearch(Target);
                     }
-                    else if (WeaponType == "Rush")
+                    else if (WeaponType == "Body")
                     {
-                        TriggerRush(Target);
+                        TriggerBody(Target);
                     }
                     else if (WeaponType == "Hold")
                     {
                         TriggerHold(Target);
                     }
+                    else if (WeaponType == "Check")
+                    {
+                        TriggerCheck(Target);
+                    }
                 }
                 else
                 {
-                    DestroyGun();
                 }
 
             }
@@ -229,7 +264,33 @@ public class ControllerWeapon : MonoBehaviour
         return WeaponTypeDetail;
     }
 
-    private void MoveGun()
+    private void DestroyShield()
+    {
+        if (WeaponType == "Shield"&CheckSlotKeyDown()==false)
+        {
+            ThisCharaGeneral.MyDestroy();
+        }
+
+    }
+
+    private bool CheckSlotKeyDown()
+    {
+        bool Result = false;
+        if (Slot == 1& Input.GetKey(KeyCode.A))
+        {
+            Result = true;
+        }
+        else if (Slot == 2 & Input.GetKey(KeyCode.S))
+        {
+            Result = true;
+        }
+        else
+        {
+            Result = false;
+        }
+        return Result;
+    }
+        private void MoveGun()
     {
         if (WeaponType == "Gun")
         {
@@ -256,17 +317,17 @@ public class ControllerWeapon : MonoBehaviour
         }
     }
 
-    IEnumerator RodDestroyCoroutine()
+    IEnumerator DestroyRodCoroutine()
 {
             yield return new WaitForSeconds(ExistTime * 1.0f);
         ThisCharaGeneral.MyDestroy();
 }
-    private void DestroyTime()
+    private void TimeDestroy()
     {
     if (ExistTime != 0)
     {
         Routine = null;
-        Routine = RodDestroyCoroutine();
+        Routine = DestroyRodCoroutine();
         StartCoroutine(Routine);
     }
     }
@@ -290,18 +351,12 @@ public class ControllerWeapon : MonoBehaviour
         return Return;
     }
 
-    private void CheckType() {
-        if (WeaponType != "Rod" & WeaponType != "Gun" & WeaponType != "Grab" & WeaponType != "Rush" & WeaponType != "Search" & WeaponType != "Hold")
-        {
-            Debug.Log(WeaponType+"は定義されていないWeaponType");
-            //ThisCharaGeneral.MyDestroy();
-        }        
-    }
+   
     private void AddInfoToCharaGeneralAsWeapon()
     {
         ThisCharaGeneral.SetCharaType("Weapon");
-        ThisCharaGeneral.SetSwitchCollisionKnockBack(0);
-        ThisCharaGeneral.SetSwitchDamagedKnockBack(0);
+        ThisCharaGeneral.SetSwitchCollisionKnockBack(false);
+        ThisCharaGeneral.SetSwitchDamagedKnockBack(false);
         if (KnockBackAmount == 0) { KnockBackAmount = 20; }
     }
 
@@ -312,14 +367,14 @@ public class ControllerWeapon : MonoBehaviour
 
         AddInfoToCharaGeneralAsWeapon();
         SetTeam();
-        CheckType();
-        DestroyTime();
+        TimeDestroy();
         CheckStartAction();
 
     }
 
     private void Update()
     {
+        DestroyShield();
         CheckTriggerAction();
     }
 }

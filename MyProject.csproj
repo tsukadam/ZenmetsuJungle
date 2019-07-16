@@ -64,8 +64,11 @@
     <Compile Include="Assets\Scripts\ControllerAttack.cs" />
     <Compile Include="Assets\Scripts\ControllerCharaGeneral.cs" />
     <Compile Include="Assets\Scripts\ControllerEnemy.cs" />
+    <Compile Include="Assets\Scripts\ControllerItem.cs" />
     <Compile Include="Assets\Scripts\ControllerKey.cs" />
+    <Compile Include="Assets\Scripts\ControllerMassage.cs" />
     <Compile Include="Assets\Scripts\ControllerPlayer.cs" />
+    <Compile Include="Assets\Scripts\ControllerUI.cs" />
     <Compile Include="Assets\Scripts\ControllerWeapon.cs" />
     <Compile Include="Assets\Scripts\DebugStatusInfo.cs" />
     <Compile Include="Assets\Scripts\MyClass.cs" />
@@ -294,12 +297,6 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:/Program Files/Unity20180301/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>C:/Program Files/Unity20180301/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions">
-      <HintPath>C:/Program Files/Unity20180301/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity20180301/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>

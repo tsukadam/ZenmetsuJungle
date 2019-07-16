@@ -142,8 +142,10 @@ MonoBehaviour:
   Direction: 
   MoveAmount: 0
   ExistTime: 2
-  DamageAmount: 5
-  KnockBackAmount: 50
+  HitDamageAmount: 5
+  MentalDamageAmount: 30
+  KnockBackAmount: 70
+  Slot: 0
   Boss: {fileID: 0}
   Team: 
 --- !u!114 &6985031029192735386

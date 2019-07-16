@@ -9,8 +9,8 @@ public class ControllerCharaGeneral : MonoBehaviour
 
     public string CharaType;//Player、Enemy、Weapon
 
-    public int SwitchDamagedKnockBack = 0;
-    public int SwitchCollisionKnockBack = 0;
+    public bool SwitchDamagedKnockBack = false;
+    public bool SwitchCollisionKnockBack = false;
 
     public string StateCollision = "Exit";
     public string StateTrigger = "Exit";
@@ -22,17 +22,28 @@ public class ControllerCharaGeneral : MonoBehaviour
     public Collider2D ObjectTriggerNow;
 
 
-    public void OnStun()
+    public void OffKnockBack()
     {
-    SwitchDamagedKnockBack = 0;
-    SwitchCollisionKnockBack = 0;
+    SwitchDamagedKnockBack = false;
+    SwitchCollisionKnockBack = false;
 }
-    public void OffStun()
+    public void OnKnockBack()
     {
-        SwitchDamagedKnockBack = 1;
-        SwitchCollisionKnockBack = 1;
+        SwitchDamagedKnockBack = true;
+        SwitchCollisionKnockBack = true;
     }
 
+    public void Pause()
+    {
+        if (Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
+    }
 
     public void MyDestroy()
     {
@@ -48,23 +59,23 @@ public class ControllerCharaGeneral : MonoBehaviour
         return CharaType;
     }
 
-    public void SetSwitchCollisionKnockBack(int State)
+    public void SetSwitchCollisionKnockBack(bool Switch)
     {
-        SwitchCollisionKnockBack = State;
+        SwitchCollisionKnockBack = Switch;
     }
-    public int GetSwitchCollisionKnockBack()
+    public bool GetSwitchCollisionKnockBack()
     {
-        int Return;
+        bool Return;
         Return= SwitchCollisionKnockBack;
         return Return;
     }
-    public void SetSwitchDamagedKnockBack(int State)
+    public void SetSwitchDamagedKnockBack(bool Switch)
     {
-        SwitchDamagedKnockBack = State;
+        SwitchDamagedKnockBack = Switch;
     }
-    public int GetSwitchDamagedKnockBack()
+    public bool GetSwitchDamagedKnockBack()
     {
-        int Return;
+        bool Return;
         Return = SwitchDamagedKnockBack;
         return Return;
     }
@@ -102,7 +113,7 @@ public class ControllerCharaGeneral : MonoBehaviour
 
     public void DamagedKnockBack(float Amount,string FromDirection)
     {
-        if (SwitchDamagedKnockBack != 0)
+        if (SwitchDamagedKnockBack != false)
         {
            
             AddForceTween(FromDirection, Amount);
@@ -110,7 +121,7 @@ public class ControllerCharaGeneral : MonoBehaviour
     }
     public void CollisionKnockBack()
     {
-        if (SwitchCollisionKnockBack != 0)
+        if (SwitchCollisionKnockBack != false)
         {
             string AntiDirection = GetAntiDirection();
             AddForce(AntiDirection, CollisionKnockBackAmount);

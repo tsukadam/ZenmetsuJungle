@@ -153,16 +153,16 @@ namespace Tests
         [Test]
         public void TestSetGetSwitchCollisionKnockBack()
         {
-            Player.GetComponent<ControllerCharaGeneral>().SetSwitchCollisionKnockBack(1);
-            int State = Player.GetComponent<ControllerCharaGeneral>().GetSwitchCollisionKnockBack();
-            Assert.IsTrue(State == 1);
+            Player.GetComponent<ControllerCharaGeneral>().SetSwitchCollisionKnockBack(true);
+            bool Switch = Player.GetComponent<ControllerCharaGeneral>().GetSwitchCollisionKnockBack();
+            Assert.IsTrue(Switch == true);
         }
         [Test]
         public void TestSetGetSwitchDamagedKnockBack()
         {
-            Player.GetComponent<ControllerCharaGeneral>().SetSwitchDamagedKnockBack(1);
-            int State = Player.GetComponent<ControllerCharaGeneral>().GetSwitchDamagedKnockBack();
-            Assert.IsTrue(State == 1);
+            Player.GetComponent<ControllerCharaGeneral>().SetSwitchDamagedKnockBack(true);
+            bool Switch = Player.GetComponent<ControllerCharaGeneral>().GetSwitchDamagedKnockBack();
+            Assert.IsTrue(Switch == true);
 
         }
         [Test]

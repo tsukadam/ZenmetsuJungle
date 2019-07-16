@@ -142,9 +142,12 @@ MonoBehaviour:
   Direction: 
   MoveAmount: 0
   ExistTime: 1
-  DamageAmount: 2
-  Parent: {fileID: 0}
-  ParentType: 
+  HitDamageAmount: 15
+  MentalDamageAmount: 30
+  KnockBackAmount: 0
+  Slot: 0
+  Boss: {fileID: 0}
+  Team: 
 --- !u!114 &1095086220041973719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +166,5 @@ MonoBehaviour:
   StateCollision: Exit
   StateTrigger: Exit
   StateDirection: Down
-  CollisionKnockBackAmount: 1
   DamagedKnockBackAmount: 100
   ObjectTriggerNow: {fileID: 0}

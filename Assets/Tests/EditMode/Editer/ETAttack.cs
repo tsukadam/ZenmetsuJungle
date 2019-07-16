@@ -20,16 +20,16 @@ namespace Tests
         [Test]
         public void TestSetGetWeaponType()
         {
-            Player.GetComponent<ControllerAttack>().SetWeaponTypeDetail("Sword");
-            string Type = Player.GetComponent<ControllerAttack>().GetWeaponTypeDetail();
+            Player.GetComponent<ControllerAttack>().SetWeaponTypeDetail(0,"Sword");
+            string Type = Player.GetComponent<ControllerAttack>().GetWeaponTypeDetail(0);
             Assert.IsTrue(Type == "Sword");
         }
         [Test]
         public void TestEquipWeapon()
         {
-            Player.GetComponent<ControllerAttack>().EquipWeapon("GunBullet");
-            string WeaponType = Player.GetComponent<ControllerAttack>().GetWeaponTypeDetail();
-            GameObject WeaponPrefab= Player.GetComponent<ControllerAttack>().GetWeaponPrefab();
+            Player.GetComponent<ControllerAttack>().EquipWeapon(0,"GunBullet");
+            string WeaponType = Player.GetComponent<ControllerAttack>().GetWeaponTypeDetail(0);
+            GameObject WeaponPrefab= Player.GetComponent<ControllerAttack>().GetWeaponPrefab(0);
             Assert.IsTrue(WeaponPrefab != null);
             Assert.IsTrue(WeaponType == "GunBullet");
         }
@@ -39,8 +39,8 @@ namespace Tests
         public void TestMakeWeapon(string WeaponType)
         {
             string Direction = Player.GetComponent<ControllerCharaGeneral>().GetDirection();
-            Player.GetComponent<ControllerAttack>().EquipWeapon(WeaponType);
-            Player.GetComponent<ControllerAttack>().MakeWeapon();
+            Player.GetComponent<ControllerAttack>().EquipWeapon(0,WeaponType);
+            Player.GetComponent<ControllerAttack>().MakeWeapon(0);
         }
     }
 }

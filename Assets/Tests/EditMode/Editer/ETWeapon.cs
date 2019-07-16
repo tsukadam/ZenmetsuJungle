@@ -20,8 +20,8 @@ namespace Tests
         [Test]
         public void TestSetGetTypeDetail()
         {
-            Player.GetComponent<ControllerAttack>().EquipWeapon("GunBullet");
-            Player.GetComponent<ControllerAttack>().MakeWeapon();
+            Player.GetComponent<ControllerAttack>().EquipWeapon(0,"GunBullet");
+            Player.GetComponent<ControllerAttack>().MakeWeapon(0);
             GameObject Weapon = Player.transform.Find("GunBullet(Clone)").gameObject;
             Weapon.GetComponent<ControllerWeapon>().SetTypeDetail("RodSword");
             string TypeDetail = Weapon.GetComponent<ControllerWeapon>().GetTypeDetail();

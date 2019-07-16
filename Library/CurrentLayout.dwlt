@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 324}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -38,12 +38,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1513
+    x: 1512
     y: 0
-    width: 407
+    width: 408
     height: 1067
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -71,7 +71,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1117
-  m_MinSize: {x: 950, y: 324}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1067
-  m_MinSize: {x: 913, y: 274}
-  m_MaxSize: {x: 22008, y: 10024}
+  m_MinSize: {x: 915, y: 274}
+  m_MaxSize: {x: 22010, y: 10024}
   vertical: 0
-  controlID: 90
+  controlID: 46
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,7 +186,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 0
-    width: 906
+    width: 904
     height: 1067
   m_MinSize: {x: 204, y: 224}
   m_MaxSize: {x: 4004, y: 4024}
@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1110
+    x: 1108
     y: 0
-    width: 403
+    width: 404
     height: 1067
   m_MinSize: {x: 234, y: 274}
   m_MaxSize: {x: 10004, y: 10024}
@@ -249,7 +249,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1110
     y: 73
-    width: 399
+    width: 398
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -388,7 +388,7 @@ MonoBehaviour:
       name: ZenmetsuJungle
       fullName: ZenmetsuJungle
       resultStatus: 2
-      duration: 0.0570088
+      duration: 0.3813065
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -402,7 +402,7 @@ MonoBehaviour:
       name: EditMode.dll
       fullName: C:/Users/tsuka/ZenmetsuJungle/Library/ScriptAssemblies/EditMode.dll
       resultStatus: 2
-      duration: 0.035515
+      duration: 0.2762228
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -416,7 +416,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 2
-      duration: 0.0232311
+      duration: 0.2073485
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -430,7 +430,7 @@ MonoBehaviour:
       name: ETAttack
       fullName: Tests.ETAttack
       resultStatus: 2
-      duration: 0.0866082
+      duration: 0.0687747
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -443,11 +443,21 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack.TestEquipWeapon]'
       name: TestEquipWeapon
       fullName: Tests.ETAttack.TestEquipWeapon
-      resultStatus: 1
-      duration: 0.0097666
-      messages: 
+      resultStatus: 2
+      duration: 0.0107458
+      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
+        the array.'
       output: 
-      stacktrace: 
+      stacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+        \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+        TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+        \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+        [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+        \r\n  at Tests.ETAttack.TestEquipWeapon () [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:30
+        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -459,7 +469,7 @@ MonoBehaviour:
       name: TestMakeWeapon
       fullName: Tests.ETAttack.TestMakeWeapon
       resultStatus: 2
-      duration: 0.0494613
+      duration: 0.0230356
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -473,23 +483,17 @@ MonoBehaviour:
       name: TestMakeWeapon("GunBullet")
       fullName: Tests.ETAttack.TestMakeWeapon("GunBullet")
       resultStatus: 2
-      duration: 0.0060193
-      messages: 'UnityEngine.UnassignedReferenceException : The variable Canvas of
-        ControllerAttack has not been assigned.
-
-        You probably need to assign the Canvas variable of the ControllerAttack script
-        in the inspector.'
+      duration: 0.0007658
+      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
+        the array.'
       output: 
-      stacktrace: "  at (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
-        \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject
-        Weapon) [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
-        \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
-        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
-        \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
-        [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
-        \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
-        \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00024]
-        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:43
+      stacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+        \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+        TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+        \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+        [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+        \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00012]
+        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:42
         \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
         \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
         invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
@@ -504,11 +508,22 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("None")]'
       name: TestMakeWeapon("None")
       fullName: Tests.ETAttack.TestMakeWeapon("None")
-      resultStatus: 1
-      duration: 0.0053953
-      messages: 
-      output: "WeaponType\u304CNone\r\n"
-      stacktrace: 
+      resultStatus: 2
+      duration: 0.0004183
+      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
+        the array.'
+      output: 
+      stacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+        \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+        TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+        \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+        [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+        \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00012]
+        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:42
+        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -519,11 +534,22 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack.TestMakeWeapon("hoge")]'
       name: TestMakeWeapon("hoge")
       fullName: Tests.ETAttack.TestMakeWeapon("hoge")
-      resultStatus: 1
-      duration: 0.0017814
-      messages: 
-      output: "WeaponType\u304CLoad\u3067\u304D\u306A\u3044\r\n"
-      stacktrace: 
+      resultStatus: 2
+      duration: 0.0003624
+      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
+        the array.'
+      output: 
+      stacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+        \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+        TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+        \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+        [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+        \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00012]
+        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:42
+        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -534,11 +560,19 @@ MonoBehaviour:
     - id: '[EditMode][Tests.ETAttack.TestSetGetWeaponType]'
       name: TestSetGetWeaponType
       fullName: Tests.ETAttack.TestSetGetWeaponType
-      resultStatus: 1
-      duration: 0.0002607
-      messages: 
+      resultStatus: 2
+      duration: 0.0005028
+      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
+        the array.'
       output: 
-      stacktrace: 
+      stacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+        \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+        TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+        \r\n  at Tests.ETAttack.TestSetGetWeaponType () [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:23
+        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -550,7 +584,7 @@ MonoBehaviour:
       name: ETCharaGeneral
       fullName: Tests.ETCharaGeneral
       resultStatus: 1
-      duration: 0.0312656
+      duration: 0.0317116
       messages: 
       output: 
       stacktrace: 
@@ -564,7 +598,7 @@ MonoBehaviour:
       name: TestAddDirection
       fullName: Tests.ETCharaGeneral.TestAddDirection
       resultStatus: 1
-      duration: 0.0005266
+      duration: 0.0045653
       messages: 
       output: 
       stacktrace: 
@@ -579,7 +613,7 @@ MonoBehaviour:
       name: TestAddPosition
       fullName: Tests.ETCharaGeneral.TestAddPosition
       resultStatus: 1
-      duration: 0.0070786
+      duration: 0.0078131
       messages: 
       output: 
       stacktrace: 
@@ -593,7 +627,7 @@ MonoBehaviour:
       name: TestAddPosition(10.0f,0)
       fullName: Tests.ETCharaGeneral.TestAddPosition(10.0f,0)
       resultStatus: 1
-      duration: 0.0005229
+      duration: 0.0010364
       messages: 
       output: 
       stacktrace: 
@@ -608,7 +642,7 @@ MonoBehaviour:
       name: TestAddPosition(-10.0f,0)
       fullName: Tests.ETCharaGeneral.TestAddPosition(-10.0f,0)
       resultStatus: 1
-      duration: 0.000198
+      duration: 0.0001882
       messages: 
       output: 
       stacktrace: 
@@ -623,7 +657,7 @@ MonoBehaviour:
       name: TestAddPosition(0,10.0f)
       fullName: Tests.ETCharaGeneral.TestAddPosition(0,10.0f)
       resultStatus: 1
-      duration: 0.0001944
+      duration: 0.0001801
       messages: 
       output: 
       stacktrace: 
@@ -638,7 +672,7 @@ MonoBehaviour:
       name: TestAddPosition(0,-10.0f)
       fullName: Tests.ETCharaGeneral.TestAddPosition(0,-10.0f)
       resultStatus: 1
-      duration: 0.0001882
+      duration: 0.0001791
       messages: 
       output: 
       stacktrace: 
@@ -653,7 +687,7 @@ MonoBehaviour:
       name: TestCollision
       fullName: Tests.ETCharaGeneral.TestCollision
       resultStatus: 1
-      duration: 0.0003173
+      duration: 0.0003264
       messages: 
       output: 
       stacktrace: 
@@ -668,7 +702,7 @@ MonoBehaviour:
       name: TestGetAntiDirection
       fullName: Tests.ETCharaGeneral.TestGetAntiDirection
       resultStatus: 1
-      duration: 0.0004642
+      duration: 0.0005879
       messages: 
       output: 
       stacktrace: 
@@ -683,7 +717,7 @@ MonoBehaviour:
       name: TestSetGetCharaType
       fullName: Tests.ETCharaGeneral.TestSetGetCharaType
       resultStatus: 1
-      duration: 0.0003421
+      duration: 0.0003213
       messages: 
       output: 
       stacktrace: 
@@ -698,7 +732,7 @@ MonoBehaviour:
       name: TestSetGetCollision
       fullName: Tests.ETCharaGeneral.TestSetGetCollision
       resultStatus: 1
-      duration: 0.0002786
+      duration: 0.0002965
       messages: 
       output: 
       stacktrace: 
@@ -713,7 +747,7 @@ MonoBehaviour:
       name: TestSetGetDirection
       fullName: Tests.ETCharaGeneral.TestSetGetDirection
       resultStatus: 1
-      duration: 0.0003563
+      duration: 0.0003336
       messages: 
       output: 
       stacktrace: 
@@ -728,7 +762,7 @@ MonoBehaviour:
       name: TestSetGetPosition
       fullName: Tests.ETCharaGeneral.TestSetGetPosition
       resultStatus: 1
-      duration: 0.000357
+      duration: 0.0003001
       messages: 
       output: 
       stacktrace: 
@@ -743,7 +777,7 @@ MonoBehaviour:
       name: TestSetGetSwitchCollisionKnockBack
       fullName: Tests.ETCharaGeneral.TestSetGetSwitchCollisionKnockBack
       resultStatus: 1
-      duration: 0.0003118
+      duration: 0.0003166
       messages: 
       output: 
       stacktrace: 
@@ -758,7 +792,7 @@ MonoBehaviour:
       name: TestSetGetSwitchDamagedKnockBack
       fullName: Tests.ETCharaGeneral.TestSetGetSwitchDamagedKnockBack
       resultStatus: 1
-      duration: 0.0002997
+      duration: 0.0003115
       messages: 
       output: 
       stacktrace: 
@@ -773,7 +807,7 @@ MonoBehaviour:
       name: TestSetGetTrigger
       fullName: Tests.ETCharaGeneral.TestSetGetTrigger
       resultStatus: 1
-      duration: 0.0003144
+      duration: 0.0003092
       messages: 
       output: 
       stacktrace: 
@@ -788,7 +822,7 @@ MonoBehaviour:
       name: TestTrigger
       fullName: Tests.ETCharaGeneral.TestTrigger
       resultStatus: 1
-      duration: 0.0002709
+      duration: 0.0002549
       messages: 
       output: 
       stacktrace: 
@@ -803,7 +837,7 @@ MonoBehaviour:
       name: ETEnemy
       fullName: Tests.ETEnemy
       resultStatus: 1
-      duration: 0.0344228
+      duration: 0.0239503
       messages: 
       output: 
       stacktrace: 
@@ -817,7 +851,7 @@ MonoBehaviour:
       name: ETEnemySimplePasses
       fullName: Tests.ETEnemy.ETEnemySimplePasses
       resultStatus: 1
-      duration: 0.0002228
+      duration: 0.0001874
       messages: 
       output: 
       stacktrace: 
@@ -832,7 +866,7 @@ MonoBehaviour:
       name: ETEnemyWithEnumeratorPasses
       fullName: Tests.ETEnemy.ETEnemyWithEnumeratorPasses
       resultStatus: 1
-      duration: 0.0188543
+      duration: 0.0158275
       messages: 
       output: 
       stacktrace: 
@@ -847,7 +881,7 @@ MonoBehaviour:
       name: ETKey
       fullName: Tests.ETKey
       resultStatus: 1
-      duration: 0.014309
+      duration: 0.0171731
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -863,7 +897,7 @@ MonoBehaviour:
       name: CheckInitNumericKey
       fullName: Tests.ETKey.CheckInitNumericKey
       resultStatus: 1
-      duration: 0.0063723
+      duration: 0.0063449
       messages: 
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively,
@@ -880,7 +914,7 @@ MonoBehaviour:
       name: ETWeapon
       fullName: Tests.ETWeapon
       resultStatus: 2
-      duration: 0.013087
+      duration: 0.0067282
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -894,22 +928,16 @@ MonoBehaviour:
       name: TestSetGetTypeDetail
       fullName: Tests.ETWeapon.TestSetGetTypeDetail
       resultStatus: 2
-      duration: 0.0024407
-      messages: 'UnityEngine.UnassignedReferenceException : The variable Canvas of
-        ControllerAttack has not been assigned.
-
-        You probably need to assign the Canvas variable of the ControllerAttack script
-        in the inspector.'
+      duration: 0.0005671
+      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
+        the array.'
       output: 
-      stacktrace: "  at (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
-        \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject
-        Weapon) [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
-        \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
-        in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
-        \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
-        [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
-        \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
-        \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00017] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:24
+      stacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+        \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+        TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+        \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+        [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+        \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:23
         \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
         \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
         invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
@@ -925,7 +953,7 @@ MonoBehaviour:
       name: NewTestScriptEdit
       fullName: Tests.NewTestScriptEdit
       resultStatus: 1
-      duration: 0.0116936
+      duration: 0.0054478
       messages: 
       output: 
       stacktrace: 
@@ -939,7 +967,7 @@ MonoBehaviour:
       name: MyClassTest1
       fullName: Tests.NewTestScriptEdit.MyClassTest1
       resultStatus: 1
-      duration: 0.0007107
+      duration: 0.000633
       messages: 
       output: 
       stacktrace: 
@@ -954,7 +982,7 @@ MonoBehaviour:
       name: MyClassTest2
       fullName: Tests.NewTestScriptEdit.MyClassTest2
       resultStatus: 1
-      duration: 0.0002356
+      duration: 0.0002225
       messages: 
       output: 
       stacktrace: 
@@ -965,39 +993,33 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditMode][Tests.NewTestScriptEdit][suite]'
-    m_ResultText: "TestSetGetTypeDetail (0.002s)\n---\nUnityEngine.UnassignedReferenceException
-      : The variable Canvas of ControllerAttack has not been assigned.\nYou probably
-      need to assign the Canvas variable of the ControllerAttack script in the inspector.\n---\nat
-      (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
-      \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject Weapon)
-      [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
-      \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
-      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
-      \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
-      [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
-      \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
-      \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00017] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:24
+    m_ResultText: "TestMakeWeapon(\"hoge\") (0.000s)\n---\nSystem.IndexOutOfRangeException
+      : Index was outside the bounds of the array.\n---\nat (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+      \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+      TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+      \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+      [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+      \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00012]
+      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:42
       \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
       \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
       invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
       culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0"
-    m_ResultStacktrace: "  at (wrapper managed-to-native) UnityEngine.GameObject.get_transform(UnityEngine.GameObject)\r\n
-      \ at ControllerAttack.SetWeaponStructurallyParent (UnityEngine.GameObject Weapon)
-      [0x0001b] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:87
-      \r\n  at ControllerAttack.InitWeapon (UnityEngine.GameObject Weapon) [0x00042]
-      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:78
-      \r\n  at ControllerAttack.InstantiateWeapon (UnityEngine.GameObject WeaponPrefab)
-      [0x00018] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:69
-      \r\n  at ControllerAttack.MakeWeapon () [0x00012] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:62
-      \r\n  at Tests.ETWeapon.TestSetGetTypeDetail () [0x00017] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETWeapon.cs:24
+    m_ResultStacktrace: "  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)\r\n
+      \ at ControllerAttack.SetWeaponTypeDetail (System.Int32 Slot, System.String
+      TypeDetail) [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:34
+      \r\n  at ControllerAttack.EquipWeapon (System.Int32 Slot, System.String TypeDetail)
+      [0x00001] in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Scripts\\ControllerAttack.cs:28
+      \r\n  at Tests.ETAttack.TestMakeWeapon (System.String WeaponType) [0x00012]
+      in C:\\Users\\tsuka\\ZenmetsuJungle\\Assets\\Tests\\EditMode\\Editer\\ETAttack.cs:42
       \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\r\n
       \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
       invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
       culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 124a3153
-      m_LastClickedID: 1395739154
+      m_SelectedIDs: 31423a6f
+      m_LastClickedID: 1866089009
       m_ExpandedIDs: d5b84f9b30e77fa2e89758a7a50c29023beef20227f1d6313a2ac938e191b649fb4f064fc138f052e0cc96563a4f8b60ea2b8c7ba56df77effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1045,9 +1067,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 993
+    x: 1110
     y: 73
-    width: 516
+    width: 399
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
@@ -1082,7 +1104,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 73
-    width: 902
+    width: 841
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
@@ -1116,10 +1138,10 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 902
+      width: 841
       height: 1030
-    m_Scale: {x: 0.8808594, y: 0.8808594}
-    m_Translation: {x: 451, y: 515}
+    m_Scale: {x: 0.82128906, y: 0.821289}
+    m_Translation: {x: 420.5, y: 515}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -1127,14 +1149,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -512
-      y: -584.6563
+      y: -627.06305
       width: 1024
-      height: 1169.3126
+      height: 1254.1261
     m_MinimalGUI: 1
-  m_defaultScale: 0.8808594
+  m_defaultScale: 0.82128906
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 902, y: 1047}
+  m_LastWindowPixelSize: {x: 841, y: 1047}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -1168,23 +1190,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 465c0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 18b6ffff3ab6ffff62b6ffff9cb6fffffad7ffff2cd8ffff50ddffff72ddffff9addffffd2ddffff1edeffff58deffffe0defffff2deffff1adfffff52dfffffa8eeffffc0eeffffe8eeffff10efffff4eefffffd4fbffffc4280000d628000002290000342900001637000052370000063c0000423c000034400000704000001e490000ac490000
+      m_ExpandedIDs: f4caffff36cfffffb6f0ffffc8f0ffff18f1ffff30f1ffff4af1ffff12f9ffff24f9ffff44f9ffffd4fbffff2c0c00007e0c0000ba0c0000182c00006a2c0000a62c0000b83400000a35000046350000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: MentalPoint
+        m_OriginalName: MentalPoint
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 13476
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -1210,14 +1232,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
-      type: 0}
+    m_Image: {fileID: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 204
     y: 73
-    width: 902
+    width: 900
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 07ff113979cb7c7499f9cb40221fd731
@@ -1226,9 +1247,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.331723, y: -5.4143624, z: 0.54877424}
+    m_Target: {x: 65.26795, y: -77.03601, z: -3.957294}
     speed: 2
-    m_Value: {x: 13.331723, y: -5.4143624, z: 0.54877424}
+    m_Value: {x: 65.26795, y: -77.03601, z: -3.957294}
   m_RenderMode: 3
   m_CameraMode:
     drawMode: 3
@@ -1260,9 +1281,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1009.83813
+    m_Target: 1445.8488
     speed: 2
-    m_Value: 1009.83813
+    m_Value: 1445.8488
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1321,9 +1342,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1110
+    x: 1108
     y: 73
-    width: 399
+    width: 400
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -1349,9 +1370,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a2270000
-    m_LastClickedID: 10146
-    m_ExpandedIDs: 0000000026260000702600009c270000c4270000162800003a2800005e28000000ca9a3b
+    m_SelectedIDs: fe0a0000
+    m_LastClickedID: 2814
+    m_ExpandedIDs: 0000000082090000cc090000f80a0000200b0000720b0000980b0000bc0b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1379,7 +1400,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026260000702600009c270000c4270000162800003a2800005e280000
+    m_ExpandedIDs: 0000000082090000cc090000f80a0000200b0000720b0000980b0000bc0b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1410,18 +1431,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 02050000220500007a0500000000000040050000e6770000020600009e070000a0050000482d0a001ad002008a24000096220000402e00008627000056270000362700007efc00004c27000096eefeffdcb5feff082c00003c300000542a0000722a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: DebugStatusInfo
-      m_OriginalName: DebugStatusInfo
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 8812
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
@@ -1455,9 +1476,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1110
+    x: 1049
     y: 73
-    width: 399
+    width: 459
     height: 1047
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &18
@@ -1599,10 +1620,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1513
-    y: 73
-    width: 405
-    height: 1047
+    x: 1514
+    y: 22
+    width: 406
+    height: 1043
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
