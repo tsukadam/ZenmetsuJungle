@@ -61,9 +61,9 @@ public class ControllerWeapon : MonoBehaviour
         string TargetType = Target.GetComponent<ControllerCharaGeneral>().CharaType;
         if (Team == "Enemy" & TargetType == "Player")
         {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             Boss.GetComponent<ControllerEnemy>().SetTarget(Target);
             Target.GetComponent<ControllerPlayer>().TryTouch(gameObject);
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             BodyEnable();
         }
     }
@@ -76,8 +76,11 @@ public class ControllerWeapon : MonoBehaviour
     IEnumerator BodyEnabledCoroutine()//bodyの当たり判定は一定時間で回復
     {
         yield return new WaitForSeconds(1.0f);
-        Boss.GetComponent<ControllerAttack>().EquipWeapon(1, "Body");
-        Boss.GetComponent<ControllerAttack>().AttackSimpleMake(1);
+        if (Boss.GetComponent<ControllerEnemy>().GetWithPlayerState() != "Holding" & Boss.GetComponent<ControllerEnemy>().GetWithPlayerState() != "Voreing")
+        {
+            Boss.GetComponent<ControllerAttack>().EquipWeapon(1, "Body");
+            Boss.GetComponent<ControllerAttack>().AttackSimpleMake(1);
+        }
         ThisCharaGeneral.MyDestroy();
     }
 
@@ -89,6 +92,7 @@ public class ControllerWeapon : MonoBehaviour
         {
             Boss.GetComponent<ControllerEnemy>().SetTarget(Target);
             Target.GetComponent<ControllerPlayer>().TryHold(gameObject);
+            
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 

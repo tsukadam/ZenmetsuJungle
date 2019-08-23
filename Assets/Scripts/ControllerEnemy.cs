@@ -21,6 +21,13 @@ public class ControllerEnemy : MonoBehaviour
     public GameObject Target;
     private IEnumerator Routine;
 
+    public Animator ThisAnimFront;
+    public Animator ThisAnimBack;
+
+    private Vector2 MoveNow;
+    public Vector2 MoveLast;
+
+
     private void AttackHold()//捕獲    
     {
         Routine = null;
@@ -33,7 +40,9 @@ public class ControllerEnemy : MonoBehaviour
         ThisAttack.EquipWeapon(0, "Hold");
         IEnumerator Routine2 = ThisAttack.AttackSimpleMakeCoroutine(0);
         StartCoroutine(Routine2);
+        OffCollider();
         yield return Routine2;
+        yield return new WaitForSeconds(1.0f);
 
         if (Target != null)
         {
@@ -44,6 +53,45 @@ public class ControllerEnemy : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
             }
         }
+    }
+    public void EndHold()//player側から誘発
+    {
+        SetWithPlayerState("");
+        InitTarget();
+        ThisCharaGeneral.OnKnockBack();
+        AnimateEndHold();
+       OnCollider();
+    }
+    public void EndVore()//player側から誘発
+    {
+        SetWithPlayerState("");
+        InitTarget();
+        ThisCharaGeneral.OnKnockBack();
+        AnimateEndVore();
+        AnimateEndHold();
+        OnCollider();
+    }
+
+    public void OffCollider()
+    {
+        ThisCharaGeneral.OffCollider();
+
+        GameObject Body;
+        if (gameObject.transform.Find("Body(Clone)"))
+        {
+            Debug.Log("★");
+            Body = gameObject.transform.Find("Body(Clone)").gameObject;
+            Body.GetComponent<ControllerCharaGeneral>().MyDestroy();//Bodyの判定を消す
+        }
+
+    }
+
+    public void OnCollider()
+    {
+        ThisCharaGeneral.OnCollider();
+
+        ThisAttack.EquipWeapon(1, "Body");
+        ThisAttack.AttackSimpleMake(1);
     }
 
     public void AttackVoreAfterHolding()//Holdingで気力ゼロになった時player側から誘発
@@ -56,6 +104,8 @@ public class ControllerEnemy : MonoBehaviour
     IEnumerator AttackVoreAfterHoldingCoroutine()
     {
         SetWithPlayerState("Voreing");
+        OffCollider();
+
         if (Target != null)
         {
             SetWithPlayerState("Voreing");
@@ -78,7 +128,11 @@ public class ControllerEnemy : MonoBehaviour
     }
     IEnumerator AttackVoreCoroutine()
     {
+        ThisCharaGeneral.OffCollider();
+
         SetWithPlayerState("Voreing");
+        yield return new WaitForSeconds(10.0f);
+
         if (Target != null)
         {
             SetWithPlayerState("Voreing");
@@ -121,9 +175,9 @@ public class ControllerEnemy : MonoBehaviour
                         ));
             }
         GameObject Body;
-        if (gameObject.transform.Find("Body"))
+        if (gameObject.transform.Find("Body(Clone)"))
         {
-            Body = gameObject.transform.Find("Body").gameObject;
+            Body = gameObject.transform.Find("Body(Clone)").gameObject;
             Body.GetComponent<ControllerWeapon>().BodyEnable();//成否に関わらずBodyの判定を再生しておく
         }
         InitTarget();
@@ -190,41 +244,54 @@ public class ControllerEnemy : MonoBehaviour
                 {
                     ThisCharaGeneral.AddPosition(MoveAmountOneKey * MoveDiagonal * -1, MoveAmountOneKey * MoveDiagonal);
                     ThisCharaGeneral.AddDirection(MoveAmountOneKey * MoveDiagonal * -1, MoveAmountOneKey * MoveDiagonal);
+                    SetMoveNow(-1f, 1f);
                 }
                 else if (Input.GetKey(KeyCode.Keypad6) & Input.GetKey(KeyCode.Keypad8))
                 {
                     ThisCharaGeneral.AddPosition(MoveAmountOneKey * MoveDiagonal, MoveAmountOneKey * MoveDiagonal);
                     ThisCharaGeneral.AddDirection(MoveAmountOneKey * MoveDiagonal, MoveAmountOneKey * MoveDiagonal);
+                    SetMoveNow(1f, 1f);
                 }
                 else if (Input.GetKey(KeyCode.Keypad4) & Input.GetKey(KeyCode.Keypad2))
                 {
                     ThisCharaGeneral.AddPosition(MoveAmountOneKey * MoveDiagonal * -1, MoveAmountOneKey * MoveDiagonal * -1);
                     ThisCharaGeneral.AddDirection(MoveAmountOneKey * MoveDiagonal * -1, MoveAmountOneKey * MoveDiagonal * -1);
+                    SetMoveNow(-1f, -1f);
                 }
                 else if (Input.GetKey(KeyCode.Keypad6) & Input.GetKey(KeyCode.Keypad2))
                 {
                     ThisCharaGeneral.AddPosition(MoveAmountOneKey * MoveDiagonal, MoveAmountOneKey * MoveDiagonal * -1);
                     ThisCharaGeneral.AddDirection(MoveAmountOneKey * MoveDiagonal, MoveAmountOneKey * MoveDiagonal * -1);
+                    SetMoveNow(1f, -1f);
                 }
                 else if (Input.GetKey(KeyCode.Keypad4))
                 {
                     ThisCharaGeneral.AddPosition(MoveAmountOneKey * -1, 0);
                     ThisCharaGeneral.AddDirection(MoveAmountOneKey * -1, 0);
+                    SetMoveNow(-1f, 0);
                 }
                 else if (Input.GetKey(KeyCode.Keypad6))
                 {
                     ThisCharaGeneral.AddPosition(MoveAmountOneKey, 0);
                     ThisCharaGeneral.AddDirection(MoveAmountOneKey, 0);
+                    SetMoveNow(1f, 0);
                 }
                 else if (Input.GetKey(KeyCode.Keypad8))
                 {
                     ThisCharaGeneral.AddPosition(0, MoveAmountOneKey);
                     ThisCharaGeneral.AddDirection(0, MoveAmountOneKey);
+                    SetMoveNow(0, 1f);
                 }
                 else if (Input.GetKey(KeyCode.Keypad2))
                 {
                     ThisCharaGeneral.AddPosition(0, MoveAmountOneKey * -1);
                     ThisCharaGeneral.AddDirection(0, MoveAmountOneKey * -1);
+                    SetMoveNow(0, -1f);
+                }
+                else if (Input.GetKey(KeyCode.Keypad2)==false& Input.GetKey(KeyCode.Keypad4) == false & Input.GetKey(KeyCode.Keypad6) == false & Input.GetKey(KeyCode.Keypad8) == false)
+                {
+
+                    SetMoveNow(0, 0);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Q))
@@ -246,6 +313,71 @@ public class ControllerEnemy : MonoBehaviour
         }
     }
 
+    public void AnimateHold()
+    {
+        ThisAnimFront.SetBool("Hold", true);
+        ThisAnimBack.SetBool("Hold", true);
+    }
+    public void AnimateEndHold()
+    {
+        ThisAnimFront.SetBool("Hold", false);
+        ThisAnimBack.SetBool("Hold", false);
+    }
+
+    public void AnimateVore()
+    {
+        ThisAnimFront.SetBool("Vore", true);
+        ThisAnimBack.SetBool("Vore", true);
+    }
+    public void AnimateEndVore()
+    {
+        ThisAnimFront.SetBool("Vore", false);
+        ThisAnimBack.SetBool("Vore", false);
+    }
+
+
+        public void AnimateWalk()
+    {
+        SetMoveLast();
+        ThisAnimFront.SetFloat("Dir_X", MoveNow.x);
+        ThisAnimFront.SetFloat("Dir_Y", MoveNow.y);
+        ThisAnimFront.SetFloat("LastMove_X", MoveLast.x);
+        ThisAnimFront.SetFloat("LastMove_Y", MoveLast.y);
+        ThisAnimFront.SetFloat("Input", MoveNow.magnitude);
+        ThisAnimBack.SetFloat("Dir_X", MoveNow.x);
+        ThisAnimBack.SetFloat("Dir_Y", MoveNow.y);
+        ThisAnimBack.SetFloat("LastMove_X", MoveLast.x);
+        ThisAnimBack.SetFloat("LastMove_Y", MoveLast.y);
+        ThisAnimBack.SetFloat("Input", MoveNow.magnitude);
+    }
+    public void SetMoveNow(float X, float Y)
+    {
+        MoveNow = new Vector2(X, Y);
+    }
+    public void SetMoveLast()
+    {
+        if (Mathf.Abs(MoveNow.x) > 0.5f& Mathf.Abs(MoveNow.y) <= 0.5f)
+        {
+            MoveLast.x = MoveNow.x;
+            MoveLast.y = 0;
+        }
+
+        else if (Mathf.Abs(MoveNow.x) > 0.5f & Mathf.Abs(MoveNow.y) > 0.5f)
+        {
+            MoveLast.x = MoveNow.x;
+            MoveLast.y = MoveNow.y;
+        }
+
+        else if (Mathf.Abs(MoveNow.x) <= 0.5f & Mathf.Abs(MoveNow.y) > 0.5f)
+        {
+            MoveLast.x = 0;
+            MoveLast.y = MoveNow.y;
+        }
+        else if (Mathf.Abs(MoveNow.x) <= 0.5f & Mathf.Abs(MoveNow.y) <= 0.5f)
+        {
+        }
+    }
+
     private void AddInfoToCharaGeneralAsEnemy()
     {
         //将来的にはスポーンコントローラで指定する
@@ -261,6 +393,7 @@ public class ControllerEnemy : MonoBehaviour
     private void Update()
     {
         CheckKey();
+        AnimateWalk();
     }
 
     private void Start()
@@ -268,5 +401,8 @@ public class ControllerEnemy : MonoBehaviour
         ThisCharaGeneral = gameObject.GetComponent<ControllerCharaGeneral>();
         ThisAttack = gameObject.GetComponent<ControllerAttack>();
         AddInfoToCharaGeneralAsEnemy();
+        ThisAnimFront = this.transform.Find("ImageFront").gameObject.GetComponent<Animator>();
+        ThisAnimBack = this.transform.Find("ImageBack").gameObject.GetComponent<Animator>();
+
     }
 }

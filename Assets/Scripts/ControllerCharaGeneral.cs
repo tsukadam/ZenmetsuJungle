@@ -20,7 +20,7 @@ public class ControllerCharaGeneral : MonoBehaviour
     public float DamagedKnockBackAmount = 1000f;
 
     public Collider2D ObjectTriggerNow;
-
+    public BoxCollider2D ThisCollider;
 
     public void OffKnockBack()
     {
@@ -268,6 +268,14 @@ public class ControllerCharaGeneral : MonoBehaviour
         SetTrigger("Stay");
     }
 
+    public void OffCollider()
+    {
+        ThisCollider.enabled=false;
+    }
+    public void OnCollider()
+    {
+        ThisCollider.enabled = true;
+    }
 
 
     public void SetTrigger(string State)
@@ -358,5 +366,9 @@ public class ControllerCharaGeneral : MonoBehaviour
     {
         return StateDirection;
     }
-    
+
+    public void Start()
+    {
+        if (GetComponent<BoxCollider2D>()) { ThisCollider = GetComponent<BoxCollider2D>(); }
+    }
 }
