@@ -95,6 +95,7 @@ public class ControllerPlayer : MonoBehaviour
             SetGachaPoint(0);
             SetWithEnemyState("Voreing");
             ThisCharaGeneral.OffKnockBack();
+        AnimateVore();
 
         AttackingEnemy.GetComponent<ControllerEnemy>().AnimateVore();
 
@@ -103,6 +104,24 @@ public class ControllerPlayer : MonoBehaviour
                 AttackingEnemy.GetComponent<ControllerEnemy>().AttackVoreAfterHolding();
                 AttackingEnemy.GetComponent<ControllerCharaGeneral>().OffKnockBack();
             }
+    }
+
+
+    public void AnimateHold()
+    {
+         ThisAnim.SetBool("hold", true);
+    }
+    public void AnimateEndHold()
+    {
+         ThisAnim.SetBool("hold", false);
+    }
+    public void AnimateVore()
+    {
+        ThisAnim.SetBool("vore", true);
+    }
+    public void AnimateEndVore()
+    {
+        ThisAnim.SetBool("vore", false);
     }
 
 
@@ -126,7 +145,7 @@ public class ControllerPlayer : MonoBehaviour
 
 
         OffCollider();
-            AnimateNone();
+            AnimateVore();
         AttackingEnemy.GetComponent<ControllerEnemy>().AnimateVore();
 
         if (AttackingEnemy != null)
@@ -157,7 +176,7 @@ public class ControllerPlayer : MonoBehaviour
             AttackingEnemy = Weapon.GetComponent<ControllerWeapon>().GetBoss();
             AttackingEnemy.GetComponent<ControllerCharaGeneral>().OffKnockBack();
             OffCollider();
-            AnimateNone();
+            AnimateHold();
             AttackingEnemy.GetComponent<ControllerEnemy>().AnimateHold();
 
         }
@@ -203,7 +222,7 @@ public class ControllerPlayer : MonoBehaviour
         SetWithEnemyState("");
         ThisCharaGeneral.OnKnockBack();
         GachaPoint = 0;
-        AnimateEndNone();
+        AnimateEndHold();
         OnCollider();
 
         if (AttackingEnemy != null)
@@ -226,7 +245,8 @@ public class ControllerPlayer : MonoBehaviour
         SetWithEnemyState("");
         ThisCharaGeneral.OnKnockBack();
         GachaPoint = 0;
-        AnimateEndNone();
+        AnimateEndVore();
+        AnimateEndHold();
         Xray.GetComponent<ControllerXray>().DisAppearXray();
         OnCollider();
 

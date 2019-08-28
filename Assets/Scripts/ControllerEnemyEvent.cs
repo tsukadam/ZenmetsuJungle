@@ -20,11 +20,13 @@ public class ControllerEnemyEvent : MonoBehaviour
         float X = ParentPosition.x;
         float Y = ParentPosition.y;
         float Z = ParentPosition.z;
-        Vector3 XrayPosition = new Vector3(X - 50, Y, Z);
+        Vector3 PlayerPosition = new Vector3(X - 47, Y+12, Z);
 
-        Player.GetComponent<RectTransform>().localPosition = XrayPosition;
-
+        Player.GetComponent<RectTransform>().localPosition = PlayerPosition;
     }
+
+  
+
     public void MoveXrayToEnemy()
     {
         Vector3 ParentPosition = Parent.GetComponent<ControllerCharaGeneral>().GetPosition();

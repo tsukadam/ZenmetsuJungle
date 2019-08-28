@@ -79,7 +79,6 @@ public class ControllerEnemy : MonoBehaviour
         GameObject Body;
         if (gameObject.transform.Find("Body(Clone)"))
         {
-            Debug.Log("★");
             Body = gameObject.transform.Find("Body(Clone)").gameObject;
             Body.GetComponent<ControllerCharaGeneral>().MyDestroy();//Bodyの判定を消す
         }

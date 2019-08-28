@@ -1523,7 +1523,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.3
   far clip plane: 10
   field of view: 60
   orthographic: 1
@@ -1950,7 +1950,6 @@ GameObject:
   - component: {fileID: 814107887}
   - component: {fileID: 814107886}
   - component: {fileID: 814107885}
-  - component: {fileID: 814107891}
   m_Layer: 5
   m_Name: ImageBack
   m_TagString: Untagged
@@ -1987,7 +1986,7 @@ Animator:
   m_GameObject: {fileID: 814107883}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 52a53ba1b28b7ff4aa6c69f329e721b7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 18413876a8b2a394d82a21e33974619e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2093,21 +2092,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!114 &814107891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814107883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e78d1906f81335b429435793a3995d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Xray: {fileID: 0}
-  Parent: {fileID: 0}
-  Player: {fileID: 0}
 --- !u!1 &816869993
 GameObject:
   m_ObjectHideFlags: 0
